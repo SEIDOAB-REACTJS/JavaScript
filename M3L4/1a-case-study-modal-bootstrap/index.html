@@ -1,0 +1,65 @@
+<!doctype html>
+  <html lang="en" data-bs-theme="auto">
+
+    <head>
+        <!--From index.cshtml-->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="Martin Lenart, Seido AB">
+    
+        <!-- Modified from index.cshtml-->
+        <title>Modal bootstrap</title>
+
+        <!-- Bootstrap styles from their respective templates -->
+        <link href="./css/bootstrap/bootstrap.min.css" rel="stylesheet">
+        <link href="./css/bootstrap/navbars-offcanvas.css" rel="stylesheet">
+        <link href="./css/bootstrap/features.css" rel="stylesheet">
+        <link href="./css/bootstrap/grid.css" rel="stylesheet">
+        <link href="./css/bootstrap/sign-in.css" rel="stylesheet">
+        <link href="./css/bootstrap/modals.css" rel="stylesheet">
+    </head>
+
+    <body> 
+
+        <div class="container px-4 py-4" id="modals">
+            <h2 class="pb-2 border-bottom">Modals</h2>
+            <p>This is text behind my modal window</p>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary my-1" data-bs-toggle="modal" data-bs-target="#softModal"
+                        data-seido-modal-title="softModal" data-seido-modal-body="softModal body" data-seido-modal-cancel="Close" data-seido-modal-Ok="Save">
+                    Launch soft modal - a modal that closes also if you click outside the modal or hit escape
+                </button>
+
+            <p>This is also text behind my modal window</p>
+        </div>
+
+        <!-- Modal that closes also if you click outside the modal or hit escape -->
+        <div class="modal fade" id="softModal" tabindex="-1" aria-labelledby="softModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="softModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Hello from modal
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">Ok</button>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bootstrap Javascript -->
+        <script src="./script/bootstrap/bootstrap.bundle.min.js"></script>
+
+        <!-- SeidoAB script helpers -->
+        <script src="./script/seido/modals.js"></script>
+        <script src="./script/seido/select-list-items.js"></script>
+
+    </body>
+
+</html>
