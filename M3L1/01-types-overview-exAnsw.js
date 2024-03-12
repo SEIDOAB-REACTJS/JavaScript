@@ -157,7 +157,6 @@ let number4 = 5+8+'15'+{};
 console.log(number4);
 let number6 = 1+1;
 console.log(number6);
-let number6 = 1+1;
-console.log(number6);
+
 
 
