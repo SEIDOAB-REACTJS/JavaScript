@@ -25,9 +25,9 @@ for (const match of matches) {
 const originalString = 'Now is the timesoso, this is the tame';
 
 // below RegEx matches word that starts with 't' followed by any word character (exactly 2 times) and ends with 'e;
-const regexReplace = /\bt\w{2}e\b/g;
+const regexReplace = /jessica/g;
 
-const newString = originalString.replaceAll(regexReplace, 'place');
+const newString = originalString.replaceAll(regexReplace, 'Jessica');
 console.log(`The regex ${regexReplace} changes "${originalString}" to "${newString}"`);
 
 const ex1 = '<firstName/> ipsum dolor sit amet, consectetur adipisicing elit, sed do <firstName/> tempor incididunt ut labore et dolore magna aliqua.' + 
@@ -48,6 +48,9 @@ for (const match of matchesEx2) {
   i++;
 }
 console.log(i);
+
+
+
 
 /* Exercises
 
