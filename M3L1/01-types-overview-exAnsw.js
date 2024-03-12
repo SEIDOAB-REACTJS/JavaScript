@@ -1,5 +1,5 @@
 'use strict';
-import {seedGenerator, uniqueId, randomNumber, deepCopy, isEqual} from '../SeidoHelpers/seido-helpers.js';
+import {seedGenerator, uniqueId, randomNumber, deepCopy} from '../SeidoHelpers/seido-helpers.js';
 
 
 console.group('DECLARING variables and constants');
@@ -146,3 +146,14 @@ console.log(o1.address===o2.address);
 4. create a couple of objects with properterties and test equality (value and referential)
 
 */
+
+let number1 = 5;
+console.log(number1);
+let number2 = 5+8;
+console.log(number2);
+let number3 = 5+8+'15';
+console.log(number3);
+let number4 = 5+8+'15'+{};
+console.log(number4);
+
+
