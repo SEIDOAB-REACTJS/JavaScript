@@ -23,6 +23,9 @@ console.log(`🍔 length: ${hamburger.length}`);  // Note the string length, eve
 const hamburgerStory = `I like hamburgers like ${hamburger} and ${String.fromCodePoint(0x1F354)}`;
 console.log(hamburgerStory);
 
+const food = "🫒 + 🥦"
+console.log(food + food.length);
+
 // Template literals
 const firstName = 'Annie';
 const lastName = 'Harker';
