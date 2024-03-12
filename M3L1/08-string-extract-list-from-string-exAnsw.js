@@ -21,7 +21,7 @@ for (let index = 0; index < fruits.length; index++) {
 }
 
 //using trim() to remove whitespace characters right and left
-fruits = fruits.map(s => s.length);
+let lengths = fruits.map(s => s.trim());
 
 
 // now fruits has these elements: ['cherries', 'oranges', 'apples', 'bananas']
