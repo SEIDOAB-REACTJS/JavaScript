@@ -4,6 +4,7 @@ import {seedGenerator, uniqueId, randomNumber, deepCopy, isEqual} from '../Seido
 //CAUTION: Month is 0 based, so month 2 is March
 const _date = new Date(2024, 2, 15);
 console.log(`ISO converted: ${_date}`);
+console.log(_date.getMonth());
 
 // Add days to date
 const d = new Date();

@@ -13,7 +13,7 @@ let ISOdateConverted = new Date(Date.parse('2021-12-15'));
 console.log(`ISO converted: ${ISOdateConverted}`);
 
 //DANGER! See how the date is converted into March 01
-ISOdateConverted = new Date(Date.parse('2021-02-29'));
+ISOdateConverted = new Date(Date.parse('2023-02-29'));
 console.log(`ISO converted: ${ISOdateConverted}`);
 
 
@@ -44,6 +44,8 @@ function stringToDate(dateString)
   return _date
 }
 
+let d1 = stringToDate('2021-02-15');
+//let d2 = stringToDate('2021-02-29');
 
 try {
   const d = stringToDate('2021-02-29');

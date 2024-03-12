@@ -8,6 +8,7 @@ const today = new Date();
 
 console.log(today);
 console.log(`Year: ${today.getFullYear()}`);
+console.log(`Year: ${today.getYear()}`);
 console.log(`Month: ${today.getMonth()}`);
 console.log(`Day: ${today.getDay()}`);
 

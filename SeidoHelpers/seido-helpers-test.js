@@ -10,7 +10,7 @@ console.log(_seeder.firstName);
 console.log(_seeder.lastName);
 console.log(_seeder.fullName);
 
-const country = _seeder.Country;
+const country = _seeder.country;
 console.log(country);
 console.log(_seeder.city(country));
 console.log(_seeder.street(country));
