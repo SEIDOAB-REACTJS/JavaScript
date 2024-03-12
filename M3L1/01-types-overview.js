@@ -1,13 +1,14 @@
 'use strict';
-import {seedGenerator, uniqueId, randomNumber, deepCopy, isEqual} from '../SeidoHelpers/seido-helpers.js';
+import {seedGenerator, uniqueId, randomNumber, deepCopy} from '../SeidoHelpers/seido-helpers.js';
 
 
 console.group('DECLARING variables and constants');
 // data types in js, but note you do NOT declare a datatype for variable
 // variables are declared using let
 // Using strict mode revents you from using a variable before it is declared
-let stringTest = '42';
+
 let numberTest = 42;
+let stringTest =  `Hello`;
 let booleanTest = true;
 let bigIntTest = 1234n;
 
@@ -84,6 +85,8 @@ console.log(b === d);     // false  - more strict
 console.log(e == false);   //true
 console.log(e === false);  //true
 
+console.log (d == c);     // true
+console.log (d === c);    // false    - more strict
 
 console.log('Testing object equality');
 let name1 = {firstName: "Jane", lastName: "Doe"};
@@ -101,10 +104,13 @@ console.log (name2 === name3);   //true
 
 // for value equality you need to implement yourself the method to compare object content
 console.log('object value equality');
-console.log(JSON.stringify(name1), JSON.stringify(name2), isEqual(name1, name2)); 
+const s1 = JSON.stringify(name1);
+const s2 = JSON.stringify(name2);
+console.log(s1 === s2); 
 
+//Using a function to test  Equality
 name1.phone = '123';  //adding a property for test
-console.log(JSON.stringify(name1), JSON.stringify(name2), isEqual(name1, name2)); 
+console.log(isEqual(name1, name2)); 
 
 
 //For now, simply base value Equality on the objects string representation using JSON.stringify()
@@ -113,7 +119,6 @@ console.log(JSON.stringify(name1), JSON.stringify(name2), isEqual(name1, name2))
 function isEqual(obj1, obj2) {
   return (JSON.stringify(obj1) === JSON.stringify(obj2));
 }
-
 
 
 /* Exercises

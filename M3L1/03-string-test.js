@@ -8,6 +8,12 @@ const blankTest = '';
 const nullTest = null;
 const wrappedTest = new String('42');
 
+console.log(typeof stringTest);
+console.log(typeof numberTest);
+console.log(typeof wrappedTest);
+console.log(typeof null);
+console.log(typeof undefined);
+console.log(typeof true);
 
 console.log('\nBasic string test');
 if (typeof stringTest === 'string') {
@@ -27,6 +33,9 @@ if (typeof wrappedTest === 'string') {
 }
 
 console.log('\nSafe way to Test for content in a string');
+if (stringTest) {
+  console.log('sloppy stringTest');
+}
 if (typeof stringTest === 'string' && stringTest.length > 0) {
   console.log('stringTest is a string with text');
 }
@@ -56,7 +65,9 @@ console.log(!stringTest); // falsy - Correct, it is a string
 'use strict';
 
 //But here such a test becomes wrong due to js truthy and falsy nature
-stringTest = "";
+stringTest = "Martin";
+if (stringTest)
+  console.log("is a string");
 console.log(!stringTest); // truthy - WRONG, because empty string is evaluated to false
 
 stringTest = 5;
@@ -64,14 +75,13 @@ console.log(!stringTest); // falsy - WRONG is is not a string, but any number ex
 
 
 console.log('\nTest for other types')
-numberTest = Number.POSITIVE_INFINITY;
+numberTest = NaN;
 if (typeof numberTest === 'number' && !Number.isNaN(numberTest)) {
   console.log(`${numberTest} is a valid number`);
 }
 
 
-function myFunc(myParam
-) {
+function myFunc(myParam) {
 
   if (typeof myParam !== 'string') {
     console.log("\nwrong type - cannot run the algorithm");

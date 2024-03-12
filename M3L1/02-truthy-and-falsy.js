@@ -23,6 +23,15 @@ if (null) console.log(`show only if truthy`);
 if (undefined) console.log(`show only if truthy`);
 if (NaN) console.log(`show only if truthy`);
 
+
+let s="";
+if (s)
+    console.log("Hello");
+else
+    console.log("Goodbye");
+
+
+
 //all values that are not falsy are considered truthy
 //Note that this means an empty object {} is truthy
 let obj = {};
