@@ -157,6 +157,16 @@ let number4 = 5+8+'15'+{};
 console.log(number4);
 let number6 = 1+1;
 console.log(number6);
+let number7 = 1+2+3;
+console.log(number7);
 
+let number8 = '1'+'3'.repeat(20);
+console.log(number8);
 
+let mystring = '*'.repeat(50) + 'hello' + '*'.repeat(50);
+console.log(mystring);
+
+let myperson = {age : 20, name : 'Jessica'};
+let myperson2 = {age : 10, name : 'Andreas'};
+console.log(myperson != myperson2);
 

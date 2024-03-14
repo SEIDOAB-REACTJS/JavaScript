@@ -19,7 +19,7 @@ console.log(`ISO converted: ${ISOdateConverted}`);
 
 //Check for invalid dates caused by date overflow. I.e. Feb 29 -> March 1 in JavaScript.
 function createValidDate(year, month, _date) {
-  var d = new Date(year, month, _date);
+  var d = new Date(1992, 1, 6);
   if (d.getFullYear() != year 
     || d.getMonth() != month
     || d.getDate() != _date) {
@@ -47,7 +47,7 @@ function stringToDate(dateString)
 
 try {
   const d = stringToDate('2021-02-29');
-  console.log(Number.IsNaN(d));
+  console.log(Number.isNaN(d));
 }
 catch
 {
@@ -74,6 +74,16 @@ const formatter = new Intl.DateTimeFormat('de-DE', {
 
 console.log(`Custom German: ${formatter.format(date)}`);
 
+const sweDate = new Intl.DateTimeFormat('sv').format(date);
+
+var newdate = new Date(1992, 1, 6);
+try{
+  console.log(Number.isNaN(newdate));
+  console.log(`Swe date: ${sweDate}`);
+}
+catch{
+  console.log(`Invalid jao`);
+}
 
 
 

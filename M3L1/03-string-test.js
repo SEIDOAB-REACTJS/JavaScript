@@ -106,3 +106,15 @@ myFunc(0);
 
 5. write code to test i myVar is a valid number;
 */
+
+let myVar = 5;
+console.log(myVar, typeof myVar);
+
+myFunc(myVar);
+
+if (myVar) {
+  console.log('This is a an non-empty string');
+}
+else{
+  console.log('wrong type - cannot run the algorithm');
+}

@@ -31,6 +31,8 @@ const newString = originalString.replaceAll(regexReplace, 'place');
 console.log(`The regex ${regexReplace} changes "${originalString}" to "${newString}"`);
 
 
+let tryNan = 3 * NaN;
+console.log(tryNan);
 /* Exercises
 
 1. Write code that replaces every tag '<firstName/>' in below text, with your name using RegEx. 

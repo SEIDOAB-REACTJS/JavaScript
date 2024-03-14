@@ -25,6 +25,14 @@ for (let i = 0; i<20; i++)
     console.log (`${fNames[rnd(0, fNames.length)]} ${lNames[rnd(0, lNames.length)]}`)
 }
 
+const FNames ='John, Mary, Hans, Thomas, José, Susanne'.split(', ');
+const LNames = 'Smith, Schultz, Perez, Johnsson'.split(', ');
+
+for (let i = 0; i<20; i++)
+{
+  console.log(`${FNames[rnd(0, FNames.length)]}   ${LNames[rnd(0, LNames.length)]}`)
+}
+
 /* Exercises
 const fNames = 'John, Mary, Hans, Thomas, José, Susanne'.split(', ');
 const ltNames = 'Smith, Schultz, Perez, Johnsson'.split(', ');

@@ -11,8 +11,8 @@ console.log(numberData);
 console.log(parseInt(stringData));      // 42
 console.log(parseFloat(stringData));    // 42.23
 
-console.log(Number(' 12 '));     // NaN
-console.log(parseInt('goats'));   // 12
+console.log(Number(' 12 '));     // NaN // 12
+console.log(parseInt('goats'));   // 12 // Nan
 console.log(parseFloat('12.23 goats')); // 12.23
 
 console.log(Number('2001/01/01'));      // NaN

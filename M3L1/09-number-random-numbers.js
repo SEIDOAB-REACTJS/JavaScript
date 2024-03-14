@@ -28,3 +28,5 @@ const ltNames = 'Smith, Schultz, Perez, Johnsson'.split(', ');
 1. write to the console 20 random full names from above list. Take the steps, exract the list of names, trim it, pick a name randomly, create a full name
 
 */
+
+console.log(rnd(1,3));
