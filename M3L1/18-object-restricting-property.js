@@ -17,7 +17,6 @@ console.log(data.type);           // primary
 //data.type = 'secondary';          // TypeError in strict mode: not allowed to change 
 //console.log(data.type);           // No Error in non-strict mode, but unchanged
 
-
 // Create a writeable property
 Object.defineProperty(data, 'id', {
   value: 1,

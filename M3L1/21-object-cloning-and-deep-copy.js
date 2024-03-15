@@ -25,7 +25,7 @@ function cloneStudentDeep1(student) {
   const studentCopy = { ...student };
 
   // Now duplicate the array (by expanding it with spread)
-  studentCopy.testScores = [...studentCopy.testScores];
+  studentCopy.testScores = [...student.testScores];
   return studentCopy;
 }
 
@@ -61,14 +61,28 @@ console.log(student.testScores[0]);      // 56
 console.log(shallowStudentCopy.testScores[0]);  // 56
 
 console.groupEnd();
+
+console.group('Deep1 clone test');
+// Create a truly independent student copy
+//const deepStudentCopy = cloneStudentDeep1(student);
+const deepStudentCopy1 = cloneStudentDeep1(student);
+
+// Verify the arrays are separate
+deepStudentCopy1.testScores[1] = 56;
+
+console.log(student.testScores[1]);      // 88
+console.log(deepStudentCopy1.testScores[1]);  // 56
+console.groupEnd();
+
+
 console.group('Deep clone test');
 // Create a truly independent student copy
 //const deepStudentCopy = cloneStudentDeep1(student);
 const deepStudentCopy = cloneStudentDeep2(student);
 
 // Verify the arrays are separate
-deepStudentCopy.testScores[1] = 56;
+deepStudentCopy.testScores[2] = 56;
 
-console.log(student.testScores[1]);      // 88
-console.log(deepStudentCopy.testScores[1]);  // 56
+console.log(student.testScores[2]);      
+console.log(deepStudentCopy.testScores[2]);  
 console.groupEnd();

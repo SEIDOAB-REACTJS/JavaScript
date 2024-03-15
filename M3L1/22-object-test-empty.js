@@ -13,7 +13,7 @@ if (Object.keys(blankObject2).length === 0) {
   // This code runs because there's nothing in this object
   console.log('blankObject2 is empty')
 }
-if (Object.keys(objectWithProperty).length === 0) {
+if (typeof objectWithProperty === 'object' && Object.keys(objectWithProperty).length === 0) {
   // This code won't run, because objectWithProperty isn't empty
   console.log('objectWithProperty is empty')
 }

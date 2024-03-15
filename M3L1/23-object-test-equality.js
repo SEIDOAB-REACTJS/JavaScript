@@ -26,33 +26,16 @@ console.log (name2 === name3);   //true
 
 // you need to implement yourself value equality
 console.log('value equality');
-console.log (isEqual(name1, name2)); 
-console.log (isEqual(name2, name3));
+console.log (isEqual1(name1, name2)); 
+console.log (isEqual1(name2, name3));
 
-
-//Recursive helper to check object value equality by means of comparing properties
-function isEqual(obj1, obj2) {
-  var props1 = Object.keys(obj1);
-  var props2 = Object.keys(obj2);
-
-  if (props1.length != props2.length) {
-      return false;
-  }
-
-  for (var i = 0; i < props1.length; i++) {
-      let val1 = obj1[props1[i]];
-      let val2 = obj2[props1[i]];
-      let isObjects = isObject(val1) && isObject(val2);
-
-      if (isObjects && !isEqual(val1, val2) || !isObjects && val1 !== val2) {
-          return false;
-      }
-  }
-  return true;
+function isEqual1(obj1, obj2) {
+   return obj1.firstName == obj2.firstName && obj1.lastName == obj2.lastName;
 }
-function isObject(object) {
-  return object != null && typeof object === 'object';
-}
+
+
+
+
 
 //alternatives is to use js libraries such as, 
 // https://lodash.com/docs/4.17.15#isEqual
