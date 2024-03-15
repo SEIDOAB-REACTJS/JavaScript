@@ -36,21 +36,6 @@ Vehicle.prototype = {
     }
 };
 
-function createVehicle(_seeder) {
-    const vehicle = {};
-    vehicle.regNumber = `${_seeder.fromString("NMN, ABC, KLW, SVA, PLU, BCX, PKH, UTO")} ${randomNumber(100, 999)}`;
-    vehicle.make = _seeder.fromString("Volvo, BMW, Audi");
-    vehicle.model = _seeder.fromString("XC70, XC90, i300, A4");
-    vehicle.age = randomNumber(1, 20);
-
-    const fn = _seeder.firstName;
-    const ln = _seeder.lastName;
-    vehicle.owner = `${fn} ${ln}`;
-    vehicle.owner_email = _seeder.email(fn, ln);
-
-    return vehicle;
-}
-
 const _seeder = new seedGenerator();
 
 const v1 = new Vehicle();
@@ -59,8 +44,10 @@ console.log (v1);
 const v2 = new Vehicle().createRandom(_seeder);
 console.log (v2);
 
-const vehicles = new Vehicle().createRandomMany(_seeder, 1000);
-console.log(vehicles);
+const vehicles = new Vehicle().createRandomMany(_seeder, 10);
+for (const v of vehicles) {
+    console.log(''+v);
+}
 
 
 /* Exercises
