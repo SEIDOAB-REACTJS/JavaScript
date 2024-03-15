@@ -217,13 +217,18 @@ export class seedGenerator {
     //#endregion
 
     //#region Generate seeded [] of seedObj copies
-    toArray = (NrOfItems, createObj) =>
+    toArray = (NrOfItems, fnCreateObj, protoObj = null) =>
     {
         //Create a list of seeded items
         const _list = [];
         for (let c = 0; c < NrOfItems; c++)
         {
-            _list.push(createObj(this));
+            let v = fnCreateObj(this);
+            if (protoObj !== null){
+                Object.setPrototypeOf(v, protoObj);
+            }
+
+            _list.push(v);
         }
         return _list;
     }

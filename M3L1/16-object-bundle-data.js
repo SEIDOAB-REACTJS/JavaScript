@@ -5,7 +5,6 @@ import {seedGenerator, uniqueId, randomNumber, deepCopy, isEqual} from '../Seido
 //in terminal type npm init -y
 //in the created package.json add on first row
 //"type": "module",
-import {seedGenerator, uniqueId} from '../SeidoHelpers/seido-helpers.js';
 
 // Object is a way to bundle data and functions 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
@@ -35,6 +34,7 @@ console.log (employee.firstName);
 // You can add properties through array notation or . notation
 employee.nickname = 'The Izz';
 console.log(employee['nickname']);
+console.log(employee.nickname);
 employee['adress'] = {street: 'Fulterton drive 123', zipCode: '12345', city: 'Chicago'};
 console.log(employee.nickname);
 console.log(employee.adress.street);
@@ -60,7 +60,7 @@ delete employee.sequence10;
 console.log(employee);
 
 
-const propNames = "Seatle, Chicago, New_York".split(',').map(s => s.trim());
+const propNames = "Seatle, Chicago, New_York".split(', ');
 const propValue = "5000000, 8000000, 12000000".split(',').map(s => Number(s));
 
 const magicObj = {};
@@ -86,9 +86,9 @@ console.log(_friend);
 
 
 /* Exercise
-1. Add a property id to the _friend object and use seido-helpers uniqueId() to give it a value.
-2. Create a variable _address with an empty object
-3. Create properties in _address from street, zipcode, city and country and assign them values both as literals 
-   and from the seido-helpers seedGenerator.
-  */
+1. Create a variable _address with an empty object
+2. Create properties in _address from street, zipcode, city and country and assign them values both as literals 
+   and from the seido-helpers seedGenerator
+3. Create an address property in _friend street, zipcode, city and country and assign them values from seedGenerator
+*/
 

@@ -9,6 +9,10 @@ const address = {
 };
 
 // Check for specific properties
+if (address.country !== undefined) {
+  console.log('address.country exists');
+}
+
 if ('country' in address) {
   console.log('address.country exists');
 }
@@ -53,13 +57,14 @@ for (let i = 0; i < entries.length; i+=1) {
 
 //Adding nameds properties dynamically
 var data = {
-  'PropertyA': 1,
+  PropertyA: 1,
   'PropertyB': 2,
   'PropertyC': 3
 };
 
 data["PropertyD"] = 4;
 
+console.log(data);
 console.log(data.PropertyD);
 console.log(data["PropertyD"]);
 
@@ -68,7 +73,6 @@ console.log(data["PropertyD"]);
 
 1. create a variable with an empty object then using a for loop create 10 dynamically, prop1..prop10, with values 1..10.
 2. print out the variable to teh console 
-3. Iterate over the properties and print them out one-by-one using another for loop
- 
+3. Iterate over the properties and print them out one-by-one using the various for..loops.
 
 */

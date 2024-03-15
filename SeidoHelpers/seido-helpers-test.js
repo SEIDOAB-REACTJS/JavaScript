@@ -12,6 +12,7 @@ console.log(_seeder.fullName);
 
 const country = _seeder.country;
 console.log(country);
+console.log(_seeder.city());
 console.log(_seeder.city(country));
 console.log(_seeder.street(country));
 console.log(_seeder.zipCode);

@@ -52,7 +52,16 @@ console.log(isEqual(v2, v3));
 const v2Copy = deepCopy(v2);        //deepCopy will not copy functions prop, so works only toString is in prototype
 console.log(isEqual(v2, v2Copy));
 
+const _vehicles1 = _seeder.toArray(10, createVehicle);
+for (const v of _vehicles1) {
+    console.log(v);
+}
 
+/* You will need to update your seedGenerator for this */
+const _vehicles2 = _seeder.toArray(10, createVehicle, proto);
+for (const v of _vehicles2) {
+    console.log(''+v);
+}
 
 /* Exercises
 1. Add a uniqueId property to vehicle and assign it a unique value from seido-helpers
