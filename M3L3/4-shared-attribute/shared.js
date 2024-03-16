@@ -11,7 +11,7 @@ elems.forEach(elem => {
 });
 
 // select all elements that have the 'red' class
-const reds = document.querySelectorAll('*[class="red"]');
+const reds = document.querySelectorAll('*[class="red"]'); //'*.red' OR .red
 reds.forEach(red => {
   console.log(
     `The following element has a class attribute with a red value: ${red}`
