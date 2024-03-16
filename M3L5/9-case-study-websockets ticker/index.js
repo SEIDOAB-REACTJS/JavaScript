@@ -22,7 +22,7 @@ socket.onmessage = event => {
   const msg = JSON.parse(event.data);
   
   document.getElementById('wsCommand').innerHTML = msg.command;
-  document.getElementById('wsTick').innerHTML = msg.counter;
+  document.getElementById('wsTick').innerHTML = msg.tick;
 };
 
 function wsHello (event)  {

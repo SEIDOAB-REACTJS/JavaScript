@@ -22,7 +22,7 @@ wss.on('connection', function connection(ws) {
 
   // object being passed back and forth between
   // client and server
-  const msgToClient = { command: 'hello', counter: 0 };
+  const msgToClient = { command: 'hello', tick: 0 };
 
   // send first communication to client
   ws.send(JSON.stringify(msgToClient));
@@ -52,7 +52,7 @@ wss.on('connection', function connection(ws) {
 
       // here you can place code to reset so a new transmission start from beginning
       msgToClient.command = 'hello';
-      msgToClient.counter = 0;
+      msgToClient.tick = 0;
 
       ws.send(JSON.stringify(msgToClient));
       console.log('transmit hello to client');
@@ -73,7 +73,7 @@ wss.on('connection', function connection(ws) {
 
       if (msgToClient.command === 'tick') {
 
-        msgToClient.counter++;
+        msgToClient.tick++;
         ws.send(JSON.stringify(msgToClient));
         console.log('transmit tick to client');
 
