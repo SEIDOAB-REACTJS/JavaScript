@@ -39,7 +39,7 @@ console.log(o.toString());      //Object has toString() defined for example
 //now I assign my own toString directly to object
 o.toString = function () { return `${this.greeting}`; };
 console.log(o);                 //o is still written out as an object
-console.log('' + o);             //See the trick here, forcing o to use toString()
+console.log(o.toString());             //See the trick here, forcing o to use toString()
 
 //I can change toString() of the prototype object without affecting the child
 _proto.toString = function () { return `${this.greeting}`; };

@@ -18,7 +18,7 @@ console.log('customer: ', customer);
 //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
 //Spread syntax (...) allows an object expression to be expanded in places where zero or more key-value pairs (for object literals) are expected.
 
-const o1 = {...customer};  // a new object with all key/values of customer copied in through expansion, a deep copy 
+const o1 = {...customer};  
 console.log('o1: ', o1);
 
 const customerWithAddress = {...customer, ...address};

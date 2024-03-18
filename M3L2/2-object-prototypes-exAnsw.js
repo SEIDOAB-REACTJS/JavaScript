@@ -118,7 +118,7 @@ console.log(_friend2);
 console.log(_friend2.country);
 
 _address.toString = function () {return `Hi, I am ${this.name}. I live in ${this.country}`};
-console.log(''+_friend1);
+console.log(_friend1.toString());
 console.log(''+_friend2);
 
 _address.isEqual = function (obj) {return this.country === obj.country};
@@ -126,7 +126,7 @@ _friend2.country = _friend1.country;
 console.log(_friend1.isEqual(_friend2));
 
 _address.isEqual = function (obj) {return this.country === obj.country && this.name === obj.name};
-_friend2.name = _friend1.name;
+//_friend2.name = _friend1.name;
 console.log(_friend1.isEqual(_friend2));
 
 console.groupEnd();

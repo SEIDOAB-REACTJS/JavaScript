@@ -10,7 +10,7 @@ const animal = {
 };
 
 //variable names has to same as property names, but order irrelevant
-const { Order, Name } = animal;
+let { Order, Name } = animal;
 console.log(Name, Order);
 
 const animal2 = {Order, Name};
