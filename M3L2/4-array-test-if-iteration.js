@@ -15,6 +15,7 @@ console.groupEnd();
 
 console.group('Iterating over an array')
 const animals = ['elephant', 'tiger', 'emu', 'zebra', 'cat', 'dog', 'rabbit', 'eel', 'goose', 'earwig'];
+animals.push('lion');
 
 //using for..of loop
 for (const animal of animals) {
@@ -32,7 +33,7 @@ for (let i = 0; i < animals.length; i++) {
 }
 
 //using foreach and arror function
-animals.forEach((a)=> console.log(a));
+animals.forEach( (a) => console.log(a));
 console.groupEnd
 
 
