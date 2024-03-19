@@ -40,10 +40,7 @@ console.groupEnd();
 console.group('Using seedGenerator to create random initialized object');
 function createPerson (_sgen)
 {
-    const person = 
-    {
-        address:{},
-
+    const person = {
         get age() {
 
             if (typeof this.birthDate === 'undefined') return undefined;        // Note this.birthDate, dont forget this. because a non declared variable is undefines
@@ -58,17 +55,17 @@ function createPerson (_sgen)
             }
             return age;
         },
-        
-        //override toString()
-        toString: function () { return `${this.firstName} ${this.lastName} from ${this.address.city}, ${this.address.country} is ${this.age} years old.` }  
-    };
+     };
     person.firstName = _sgen.firstName;
     person.lastName = _sgen.lastName;
     person.birthDate = _sgen.dateAndTime(1970, 2000);
 
+    person.address = {};
     person.address.country = _sgen.country;
     person.address.city = _sgen.city(person.address.country);
     person.address.street = _sgen.street(person.address.country);
+
+    person.toString = function () { return `${this.firstName} ${this.lastName} from ${this.address.city}, ${this.address.country} is ${this.age} years old.` }  
 
     return person;
 }
@@ -89,6 +86,8 @@ function Person ( _sgen, { firstName, lastName, birthDate } = { firstName: '', l
     { street, city, country } = { street: '', city: '', country: '' }) {
 
     if (!_sgen) {
+
+        //using this I can add properties, just like objects
         this.firstName = firstName;
         this.lastName = lastName;
         this.birthDate = birthDate;
@@ -108,9 +107,13 @@ function Person ( _sgen, { firstName, lastName, birthDate } = { firstName: '', l
         this.address.city = _sgen.city(this.address.country);
         this.address.street = _sgen.street(this.address.country);
     }
+
+    //I can also add functions as properties, just like objects
+    this.greetings = function () {return `Hello ${this.firstName}. All is well!`}
 }
 
-//Step 2: set the methods, getters and setters as properties in a prototype object  
+//Step 2: set the methods, getters and setters as properties in a prototype object
+//prototype is a keyword (defined property)
 Person.prototype = {
     get age() {
         if (typeof this.birthDate === 'undefined') return undefined;        // Note this.birthDate, dont forget this. because a non declared variable is undefines
@@ -135,10 +138,14 @@ console.log('' + p1);
 
 const p2 = new Person(null, { firstName: "John", lastName: "Smith", birthDate: new Date(1990, 4, 23) }, { street: "Fullerton Ave 3", city: "Chicago", country: "USA" });
 console.log('' + p2);
+console.log(p2.firstName);
+console.log(p2.greetings());
 
 
 const p3 = new Person(_seeder);
 console.log('' + p3);
+console.log(p3.firstName);
+console.log(p3.greetings());
 
 //Checking the instance class (function) of an object
 console.log(p1 instanceof Person);
