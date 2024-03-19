@@ -210,7 +210,7 @@ function masterSeeds()
       "_names": {
         "jsonFirstNames": "Harry, Lord, Hermione, Albus, Severus, Ron, Draco, Frodo, Gandalf, Sam, Peregrin, Saruman",
         "jsonLastNames": "Potter, Voldemort, Granger, Dumbledore, Snape, Malfoy, Baggins, the Gray, Gamgee, Took, the White",
-        "jsonPetNames": "Max, Charlie, Cooper, Milo, Rocky, Wanda, Teddy, Duke, Leo, Max, Simba"
+        "jsonPetNames": "Asterix, Obelix, Idefix, Miraculix, Majestix, Troubadix, Smidefix, Crabbofix, Bonemine, Senilix, Lillfixa, Tragicomix"
       },
       "_domains": {
         "jsonDomainNames": "icloud.com, me.com, mac.com, hotmail.com, gmail.com"
