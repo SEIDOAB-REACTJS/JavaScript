@@ -5,18 +5,20 @@ import {seedGenerator, uniqueId, randomNumber, deepCopy, isEqual} from '../Seido
 function addNumbers(firstNum = 10, secondNum = 20, thirdNum = 30, multiplier = 1) {
 
   //You should check that the parameters are of the type you expect
-  if (typeof (firstNum) !== 'number' && typeof firstNum !== 'undefined')
+  if (typeof (firstNum) !== 'number')
     throw new TypeError("alla parameters must be of type number");
-  if (typeof (secondNum) !== 'number' && typeof (secondNum) !== 'undefined')
+  if (typeof (secondNum) !== 'number')
     throw new TypeError("alla parameters must be of type number");
-  if (typeof (thirdNum) !== 'number' && typeof (thirdNum) !== 'undefined')
+  if (typeof (thirdNum) !== 'number')
     throw new TypeError("alla parameters must be of type number");
-  if (typeof (multiplier) !== 'number' && typeof (multiplier) !== 'undefined')
+  if (typeof (multiplier) !== 'number')
     throw new TypeError("alla parameters must be of type number");
 
 
   return multiplier * (firstNum + secondNum + thirdNum);
 }
+
+console.log(addNumbers());
 
 // With three default values
 console.log(addNumbers(42));  // 92

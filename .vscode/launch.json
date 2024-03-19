@@ -30,6 +30,13 @@
         {
             "type": "chrome",
             "request": "launch",
+            "name": "Barebone",
+            "url": "http://localhost:5502/${relativeFileDirname}/../barbone.html",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
             "name": "React Chrome",
             "url": "http://localhost:3000",
             "webRoot": "${workspaceFolder}"
