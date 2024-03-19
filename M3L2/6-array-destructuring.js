@@ -1,6 +1,10 @@
 'use strict';
 import {seedGenerator, uniqueId, randomNumber, deepCopy, isEqual} from '../SeidoHelpers/seido-helpers.js';
 
+
+const o = {name:"Martin", color:"blue"};
+const {name, color} = o;
+
 // Using the destructuring syntax
 const stateValues = [459, 144, 96, 34, 0, 14];
 const [arizona, missouri, idaho, nebraska, texas, minnesota] = stateValues;
@@ -13,6 +17,9 @@ const numbers = [2, 42, 5, 304, 1, 13];
 //...operator destructurs the array into content items
 console.log(numbers);
 console.log(...numbers);
+
+console.log(1)
+console.log(1,2,3,5,56)
 
 
 // So it is easy to find the largest number without iterating, because Math.max takes unlimited parameters
