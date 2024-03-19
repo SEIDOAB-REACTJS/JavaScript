@@ -64,6 +64,20 @@ console.log(data.PropertyD);
 console.log(data["PropertyD"]);
 
 
+
+const emtyobject = {};
+
+for (let i = 1; i <= 10; i++){
+  const propname = 'prop' + i;
+  emtyobject[propname] = i;
+}
+
+console.log(emtyobject);
+
+for (const prop in emtyobject) {
+  console.log(prop + ':', emtyobject[prop]);
+}
+
 /* Exercises
 
 1. create a variable with an empty object then using a for loop create 10 dynamically, prop1..prop10, with values 1..10.
