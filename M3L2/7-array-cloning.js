@@ -29,6 +29,11 @@ function deepCloneTest() {
 
   // Investigate the same object in objectsOriginal
   console.log(`After change to objectsCopy: ${objectsOriginal[0].age}`);   // 12
+
+
+  const test = deepCopy(objectsOriginal);
+  test[0].age = 20;
+  console.log(objectsOriginal[0].age);
 }
 
 // Basic shallow clone using ...operator

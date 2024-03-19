@@ -17,3 +17,12 @@ console.log(`First >10 number is ${bigNum}`); // 19 (the first match)
 const bigNumIndex = nums.findIndex(element => element > 100);
 console.log(`First >10 number is at index ${bigNumIndex}`); // 4
 console.groupEnd();
+
+
+
+const _seeder = new seedGenerator();
+const _quotes = _seeder.allQuotes;
+
+const _loveQuotes = _quotes.filter ((item) => {return item.quote.toLowerCase().includes('love')})
+console.log(_loveQuotes);
+

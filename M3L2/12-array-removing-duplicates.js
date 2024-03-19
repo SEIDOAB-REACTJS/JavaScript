@@ -4,6 +4,10 @@ import {seedGenerator, uniqueId, randomNumber, deepCopy, isEqual} from '../Seido
 //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
 const numbersWithDuplicates = [2, 42, 5, 42, 304, 1, 13, 2, 13];
 
+
+const s = new Set(numbersWithDuplicates);
+const a = [...s];
+
 //go from array -> set -> array, niiice
 const uniqueNumbers = [...new Set(numbersWithDuplicates)];
 
