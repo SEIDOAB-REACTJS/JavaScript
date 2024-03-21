@@ -8,8 +8,12 @@ import musicService from'./music-group-service.js';
   //Initialize the service
   const _service = new musicService(`https://appmusicwebapinet8.azurewebsites.net/api`);
 
+  //Read Database info async
+  let data = await _service.readInfoAsync();
+  console.log(data);
+
   //Read all groups
-  let data = await _service.readMusicGroupsAsync(0);
+  data = await _service.readMusicGroupsAsync(0);
   data = await _service.readMusicGroupsAsync(1, false);
   console.log(`The database contains\n ${data.dbItemsCount} items`);
   console.log(` ${data.pageCount} pages of maximum ${data.pageSize} items per page`);
