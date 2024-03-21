@@ -5,6 +5,8 @@ let params = url.searchParams;
 let id = params.get("id"); 
 
 console.log(id);
+console.log(params.has("id")); 
+console.log(params.has("fakeid")); 
 
 const _list = document.getElementById('query-params');
 for (const q of params) {
