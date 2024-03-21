@@ -13,18 +13,18 @@ console.log(demodiv);
 
 // select the parent of the element
 const parent = demodiv.parentNode;
-console.log(parent);
+console.log(`parent:`, parent);
 
 // select the children
 const children = demodiv.childNodes;
-console.log(children);
+console.log(`children:`, children);
 
 // traverse collection of child elements
-let outputString = '';
+let outputString = 'Tag with id="demodiv has children" \n';
 
 if (demodiv.hasChildNodes()) {
   children.forEach(child => {
-    outputString += `has child ${child.nodeName} `;
+    outputString += `${child.nodeName} ${child.nodeValue}\n`;
   });
 }
 console.log(outputString);

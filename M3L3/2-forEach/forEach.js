@@ -8,12 +8,15 @@ import {seedGenerator, uniqueId, randomNumber, deepCopy, isEqual} from '../../Se
 const items = document.querySelectorAll('.mystyles');
 const item = document.querySelector('.mystyles');
 
+console.log(`items: `, items);
+console.log(`item: `, item);
+
 //traversing with .ForEach
-items.forEach(item => {
-  console.log(item.innerText);
+items.forEach(i => {
+  console.log(i.innerText);
 });
 
 //traversion with for..of
-for (const item of items) {
-  console.log(item.innerHTML); 
+for (const i of items) {
+  console.log(i.innerHTML); 
 }

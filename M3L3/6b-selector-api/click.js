@@ -16,23 +16,24 @@ function clickHandler (event)  {
   window.alert(`The ${event.currentTarget.nodeName} element has been clicked!`);
 };
 
-const btn = document.getElementById('click-button');
-const href = document.getElementById('click-link');
-const div = document.getElementById('click-div');
-btn.addEventListener('click', clickHandler);
-href.addEventListener('click', clickHandler);
-div.addEventListener('click', clickHandler);
-
-
-const myList = document.getElementById('myPets');
+//The selector syntax below states that find all:
+// find the first element with id myPets
+const myList = document.querySelector('#myPets');
 for (const item of myList.childNodes) {    
   item.addEventListener('click', clickHandler);
 }
 
-
 //The selector syntax below states that find all:
 // li elements with an attribute data-row-id that are nested at some level within an element id myVehicles
-const items = document.querySelectorAll('#myVehicles li[data-row-id]');
+let items = document.querySelectorAll('#myVehicles li[data-row-id]');
+console.log(items);
+
+items.forEach (i => i.addEventListener('click', clickHandler))
+
+//The selector syntax below states that find all:
+// a elements that are at some level nested within and li element with an attribute data-row-id 
+// that are nested at some level within an element id myVehicles
+items = document.querySelectorAll('#myFriends li[data-row-id] a');
 console.log(items);
 
 items.forEach (i => i.addEventListener('click', clickHandler))
