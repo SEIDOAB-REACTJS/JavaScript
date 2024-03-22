@@ -5,7 +5,7 @@ import {seedGenerator, uniqueId, randomNumber, deepCopy, isEqual} from '../Seido
 //in terminal type npm init -y
 //in the created package.json add on first row
 //"type": "module",
-import {seedGenerator, uniqueId} from '../SeidoHelpers/seido-helpers.js';
+
 
 // Object is a way to bundle data and functions 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
@@ -79,8 +79,6 @@ _friend.firstName = _seeder.firstName;
 _friend.lastName = _seeder.lastName;
 _friend.comment = _seeder.latinSentence;
 
-console.log(_friend);
-
 _friend.id = uniqueId();
 console.log(_friend);
 
@@ -92,3 +90,9 @@ console.log(_friend);
    and from the seido-helpers seedGenerator.
   */
 
+  const _adress = {};
+
+  _adress.street = _seeder._addresses.street;
+  _adress.zipCode = _seeder.zipCode;
+  
+  console.log(_adress);

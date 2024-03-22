@@ -12,6 +12,8 @@ function createVehicle(_seeder) {
     vehicle.make = _seeder.fromString("Volvo, BMW, Audi");
     vehicle.model = _seeder.fromString("XC70, XC90, i300, A4");
     vehicle.age = randomNumber(1, 20);
+    vehicle.uniqueId = uniqueId();
+
 
     const fn = _seeder.firstName;
     const ln = _seeder.lastName;
@@ -25,12 +27,23 @@ const _seeder = new seedGenerator();
 const v1 = createVehicle(_seeder);
 const v2 = createVehicle(_seeder);
 const v3 = createVehicle(_seeder);
+const v4 = createVehicle(_seeder);
+const v5 = v4;
+const v6 = deepCopy(v5);
+
+
+v5.make = `Mercedes`;
+v6.make = `Toyta`;
+
 console.log(v1);
 console.log(v2);
 console.log(v3);
+console.log(v4);
+console.log(v5);
+console.log(v6);
 
 //assign toString function directly to an object
-v1.toString = function () { return `The vehicle ${this.regNumber} is ${this.age} years old and owned by ${this.owner}` };
+v1.toString = function () { return `The vehicle ${this.regNumber} is ${this.age} years old and owned by ${this.owner} unik ID: ${this.uniqueId}` };
 console.log(''+v1);
 
 
