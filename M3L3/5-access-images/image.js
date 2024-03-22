@@ -34,7 +34,8 @@ p.appendChild(img);
 const paras = document.querySelectorAll('p');
 
 //append the new p element (with the image) as a last child
-paras[0].parentNode.appendChild(p);
+const body = paras[0].parentNode;
+body.appendChild(p);
 
 //how many img tags do we have
 imgs = document.querySelectorAll('img');
