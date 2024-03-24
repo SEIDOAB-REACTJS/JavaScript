@@ -301,9 +301,9 @@ export function randomDecimal (_from, _to, _nrDecimals = 3) {
 //Check for invalid dates caused by date overflow. I.e. Feb 29 -> March 1 in JavaScript.
 export function createValidDate(year, month, _date) {
     var d = new Date(year, month, _date);
-    if (d.getFullYear() != year 
-      || d.getMonth() != month
-      || d.getDate() != _date) {
+    if (d.getFullYear() !== year 
+      || d.getMonth() !== month
+      || d.getDate() !== _date) {
   
         throw Error("invalid date");
     }
@@ -316,7 +316,7 @@ export function isEqual(obj1, obj2) {
     var props1 = Object.keys(obj1);
     var props2 = Object.keys(obj2);
 
-    if (props1.length != props2.length) {
+    if (props1.length !== props2.length) {
         return false;
     }
 
@@ -325,7 +325,7 @@ export function isEqual(obj1, obj2) {
         let val2 = obj2[props1[i]];
         let isObjects = isObject(val1) && isObject(val2);
 
-        if (isObjects && !isEqual(val1, val2) || !isObjects && val1 !== val2) {
+        if ((isObjects && !isEqual(val1, val2)) || (!isObjects && val1 !== val2)) {
             return false;
         }
     }
@@ -333,7 +333,7 @@ export function isEqual(obj1, obj2) {
 }
 
 function isObject(object) {
-    return object != null && typeof object === 'object';
+    return object !== null && typeof object === 'object';
 }
 
 export function isEqualArray(arrayA, arrayB) {
