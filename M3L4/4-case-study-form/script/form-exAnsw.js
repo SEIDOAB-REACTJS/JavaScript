@@ -7,6 +7,21 @@ const myForm = document.getElementById('whoAreYou');
 const url = 'http://localhost:3000/api/upload';
 
 
+myForm.addEventListener('submit', submitHandler);
+
+function submitHandler(e)
+{
+  const formData = new FormData(myForm);
+  console.log(formData);
+
+  const name = formData.get('petName');
+  console.log(name);
+  
+
+}
+
+
+/*
 myForm.addEventListener('submit', async event => {
   event.preventDefault();
 
@@ -36,6 +51,7 @@ myForm.addEventListener('submit', async event => {
     alert("Transmission error");
   }
 });
+*/
 
 /* Exercise
 1. Looking into 3-from-post example and Write code that posts the form data to server case-study-server/simple-with-form.js
