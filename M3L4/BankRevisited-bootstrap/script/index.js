@@ -8,15 +8,21 @@ const acountList = document.querySelector('#accountList');
 const btnNext = document.querySelector('#btnNext');
 const btnPrev = document.querySelector('#btnPrev');
 const myForm = document.querySelector('#whoAreYou');
+
+//Used for bootstrap style validation
 const btnAddAccount = document.querySelector('#btnValidate');
+
 const btnSearch = document.querySelector('#btnSearch');
 
 //set EventHandler
 btnNext.addEventListener('click', clickNext);
 btnPrev.addEventListener('click', clickPrev);
-//myForm.addEventListener('submit', submitHandler);
-btnAddAccount.addEventListener('click', submitHandler);
 btnSearch.addEventListener('click', searchHandler);
+
+//Used for bootstrap style validation
+btnAddAccount.addEventListener('click', submitHandler);
+//Non-bootstrap validation
+//myForm.addEventListener('submit', submitHandler);
 
 //Create accounts and bank
 const baccounts = new Account().createRandomMany(_seeder, 25);
@@ -81,7 +87,7 @@ function clickPrev (event)  {
 };
 
 
-function searchHandler (event)  {
+function searchHandler (e)  {
     e.preventDefault();
 
     const i = document.querySelector('#searchFilter');
@@ -90,6 +96,7 @@ function searchHandler (event)  {
     removeAllChildNodes(acountList);
     renderAccounts(currentPage)
 };
+
 
 function submitHandler(e) {
     if (!myForm.checkValidity()) {
@@ -101,11 +108,11 @@ function submitHandler(e) {
       
       e.preventDefault(); //prevenet the refresh of the oage after a Post
       
-      //What you have to do on success
-      const fname = document.querySelector('#whoAreYou #firstName').value;
-      const lname = document.querySelector('#whoAreYou #lastName').value;
-      const city = document.querySelector('#whoAreYou #city').value;
-      const money = Number(document.querySelector('#whoAreYou #money').value);
+      //What you have to do on success, alternative to formData
+      const fname = document.querySelector('#whoAreYou input[id="firstName"]').value;
+      const lname = document.querySelector('#whoAreYou input[id="lastName"]').value;
+      const city = document.querySelector('#whoAreYou select[id="city"]').value;
+      const money = Number(document.querySelector('#whoAreYou input[id="money"]').value);
       
       const accountNr = `${randomNumber(100,1000)}-${randomNumber(100,1000)}-${randomNumber(100,1000)}`;
       
