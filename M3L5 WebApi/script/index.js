@@ -16,7 +16,37 @@ import musicService from'./music-group-service.js';
   document.querySelector('#count-albums').innerText = `${data.nrSeededAlbums + data.nrUnseededAlbums} albums`;
   document.querySelector('#count-artists').innerText = `${data.nrSeededArtists + data.nrUnseededArtists} artists`;
 
+  const artistList = document.querySelector('#artists');
+  let _data = await _service.readArtistsAsync(0);
+  console.log(_data);
+  for (const item of _data.pageItems) {
+
+    const li = document.createElement("li");
+    li.innerHTML = `${item.firstName} ${item.lastName}`;
+    artistList.appendChild(li);
+  }
   
+
+  const albumList = document.querySelector('#albums');
+  _data = await _service.readAlbumsAsync(0, true, "love");
+  console.log(_data);
+  const nrItems = _data.dbItemsCount;
+  _data = await _service.readAlbumsAsync(0, true, "love", nrItems);
+
+  for (const item of _data.pageItems) {
+
+    const li = document.createElement("li");
+    li.innerHTML = `${item.name}`;
+    albumList.appendChild(li);
+  }
+
+
+  _data = await _service.readAlbumAsync(_data.pageItems[0].albumId, false);
+  console.log(_data);
+  const albumDetail = document.querySelector('#albumDetail');
+  albumDetail.innerHTML =  `${_data.name} by group ${_data.musicGroup.name} has sold ${_data.copiesSold}`;
+
+
 })();
 
 
