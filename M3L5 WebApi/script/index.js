@@ -15,6 +15,8 @@ import musicService from'./music-group-service.js';
   document.querySelector('#count-groups').innerText = `${data.nrSeededMusicGroups + data.nrUnseededMusicGroups} music groups`;
   document.querySelector('#count-albums').innerText = `${data.nrSeededAlbums + data.nrUnseededAlbums} albums`;
   document.querySelector('#count-artists').innerText = `${data.nrSeededArtists + data.nrUnseededArtists} artists`;
+
+  
 })();
 
 

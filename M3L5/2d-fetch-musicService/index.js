@@ -13,8 +13,8 @@ import musicService from'./music-group-service.js';
   console.log(data);
 
   //Read all groups
-  data = await _service.readMusicGroupsAsync(0);
-  data = await _service.readMusicGroupsAsync(1, false);
+  data = await _service.readMusicGroupsAsync(0, true, "queen",20);
+  //data = await _service.readMusicGroupsAsync(1, false);
   console.log(`The database contains\n ${data.dbItemsCount} items`);
   console.log(` ${data.pageCount} pages of maximum ${data.pageSize} items per page`);
 
