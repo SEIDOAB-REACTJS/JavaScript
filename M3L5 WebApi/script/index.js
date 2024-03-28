@@ -17,3 +17,12 @@ import musicService from'./music-group-service.js';
   document.querySelector('#count-artists').innerText = `${data.nrSeededArtists + data.nrUnseededArtists} artists`;
 })();
 
+
+/* Exercise
+
+1. Make a list of the first 10 artists
+2. Make a list of the all the albums containing the work "love";
+3. Read all the details of the 1st album above (ex 2)
+*/
+
+
