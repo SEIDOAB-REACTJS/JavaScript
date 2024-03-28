@@ -9,12 +9,14 @@ const btnNext = document.querySelector('#btnNext');
 const btnPrev = document.querySelector('#btnPrev');
 const myForm = document.querySelector('#whoAreYou');
 const btnAddAccount = document.querySelector('#btnValidate');
+const btnSearch = document.querySelector('#btnSearch');
 
 //set EventHandler
 btnNext.addEventListener('click', clickNext);
 btnPrev.addEventListener('click', clickPrev);
-myForm.addEventListener('submit', submitHandler);
+//myForm.addEventListener('submit', submitHandler);
 btnAddAccount.addEventListener('click', submitHandler);
+btnSearch.addEventListener('click', searchHandler);
 
 //Create accounts and bank
 const baccounts = new Account().createRandomMany(_seeder, 25);
@@ -23,7 +25,10 @@ const bank1 = new Bank("Martins bank1", baccounts );
 //list paging
 let currentPage = 0;
 const pageSize = 10;
-const maxNrPages = Math.ceil(bank1.accounts.length/pageSize);
+let maxNrPages = Math.ceil(bank1.accounts.length/pageSize);
+
+//Search filter
+let sFilter;
 
 
 //Initial page presentation
@@ -34,8 +39,15 @@ renderAccounts(0);
 
 function renderAccounts(renderPage) {
     
-    const pData = bank1.accounts.slice(pageSize*renderPage, pageSize*renderPage+pageSize);
-    for (const acc of pData) {
+    let accounts = bank1.accounts;
+    if (sFilter instanceof Number)
+    {
+        accounts = bank1.accounts.filter(a => a.accountTotal >= sFilter);
+        maxNrPages = Math.ceil(accounts.length/pageSize);
+    }
+
+    accounts = accounts.slice(pageSize*renderPage, pageSize*renderPage+pageSize);
+    for (const acc of accounts) {
         
         const div = document.createElement('div');
         div.classList.add("col-md-12", "themed-grid-col");
@@ -68,6 +80,16 @@ function clickPrev (event)  {
     renderAccounts(currentPage)
 };
 
+
+function searchHandler (event)  {
+    e.preventDefault();
+
+    const i = document.querySelector('#searchFilter');
+    sFilter = new Number(i.value);
+
+    removeAllChildNodes(acountList);
+    renderAccounts(currentPage)
+};
 
 function submitHandler(e) {
     if (!myForm.checkValidity()) {
