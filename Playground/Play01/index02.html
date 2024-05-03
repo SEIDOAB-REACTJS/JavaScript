@@ -21,13 +21,15 @@
 <body>
     <h1>Play 01</h1>
 
+    <button id="btnColor">Click Me</button>
+    <button id="btnAdd">Add items</button>
+    <button id="btnClear">Remove items</button>
+
     <ul id="itemList" class="list list1">
         <li>Item 1</li>
         <li>Item 2</li>
         <li>Item 3</li>
     </ul>
-
-    <button id="btnColor">Click Me</button>
 
     <script>
         let s = "Hello World"; // C# var alt string s = "Hello world";
@@ -52,6 +54,9 @@
             list.appendChild(li);
         }
 
+
+
+
         let btn = document.querySelector(`#btnColor`);
         btn.addEventListener(`click`, btnClick);
 
@@ -65,7 +70,31 @@
 
 
 
+        let btnAdd = document.querySelector(`#btnAdd`);
+        btnAdd.addEventListener(`click`, btnClickAdd);
 
+        function btnClickAdd (e)
+        {
+            let list  = document.querySelector(`#itemList`);
+            for (let index = 0; index < 5; index++) {
+
+                let li = document.createElement(`li`);
+                li.innerText = `Martin ${index}`;                
+                list.appendChild(li);
+            }
+        }
+
+        let btnClear = document.querySelector(`#btnClear`);
+        btnClear.addEventListener(`click`, btnClickClear);
+        function btnClickClear (e)
+        {
+            //C#: while (expr) {}
+            let list  = document.querySelector(`#itemList`);
+            while (list.firstElementChild !== null)
+            {
+                list.removeChild(list.firstElementChild);
+            }   
+        }
 
     </script>
 </body>
