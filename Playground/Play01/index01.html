@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello again</h1>
+
+    <script>
+       let h1 = document.querySelector("body h1");
+       h1.innerHTML = `Absolutly correct, Eddie!`;
+
+       let other_h1 = document.createElement("h1");
+       other_h1.innerHTML = 'Good morning everyone!';
+
+       let body = document.querySelector("body");
+       body.appendChild(other_h1);
+        
+
+    </script>
+    
+</body>
+</html>
