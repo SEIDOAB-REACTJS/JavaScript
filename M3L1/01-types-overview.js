@@ -39,11 +39,9 @@ console.group('MIX ANY TYPE');
 // As you do NOT declare a datatype for variable, you can use any datatype in a variable at any time
 stringTest = 42;
 numberTest = objectTest;
-bigIntTest = BigInt("1"+ "0".repeat(100)); // one googol 10E100;
 
-console.log(stringTest);
-console.log(numberTest);
-console.log(bigIntTest);
+console.log(stringTest, typeof stringTest);
+console.log(numberTest,typeof numberTest);
 
 // And you can mix crazily and js tries to make type conversion convert to string (most cases) or Number
 stringTest = 42 + 42 + '42' + 42 + booleanTest;  

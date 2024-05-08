@@ -24,7 +24,7 @@ if (undefined) console.log(`show only if truthy`);
 if (NaN) console.log(`show only if truthy`);
 
 
-let s="";
+let s=""
 if (s)
     console.log("Hello");
 else
@@ -40,6 +40,21 @@ if (obj) console.log(`an empty {} Object is truthy`);
 obj = null;
 if (!obj) console.log(`but remember, null is falsy`);
 
+
+
+let i = 10;
+while (i)
+{
+    i --;
+    console.log(i);
+}
+console.log('done');
+
+
+
+s = '';
+if (s)
+    console.log (`hello ${s}`);
 
 /* Exercise 
 
