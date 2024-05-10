@@ -67,9 +67,9 @@ import {seedGenerator, uniqueId, randomNumber, deepCopy} from '../../../SeidoHel
     }
 
     //init
-    (function initPage() 
+    (function initPage(s) 
     {
-        console.log("Init page run");
+        console.log(`Init page run ${s}`);
         btnClickAdd();
-    }) ();
+    }) ('hello');
 

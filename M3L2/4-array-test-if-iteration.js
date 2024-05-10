@@ -4,6 +4,12 @@ import {seedGenerator, uniqueId, randomNumber, deepCopy, isEqual} from '../Seido
 console.group('Test if object is an array')
 const browserNames = ['Firefox', 'Edge', 'Chrome', 'IE', 'Safari'];
 
+
+const a = ['Martin', 45, true, {}, []];
+for (const item of a) {
+   console.log(item, typeof item, Array.isArray(item));
+}
+
 if (Array.isArray(browserNames)) {
   // We end up here, because browserNames is a valid array.
   console.log('browserNames is an array');

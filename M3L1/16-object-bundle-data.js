@@ -23,7 +23,7 @@ console.log(employee.birthPlace.city);  // 'Toronto'
 
 employee.favoriteColor = 'blue';
 console.log (employee); 
-console.log (employee.favoritePetAge); 
+console.log (employee.favoriteColor); 
 
 
 
@@ -35,7 +35,10 @@ console.log (employee.firstName);
 employee.nickname = 'The Izz';
 console.log(employee['nickname']);
 console.log(employee.nickname);
+
 employee['adress'] = {street: 'Fulterton drive 123', zipCode: '12345', city: 'Chicago'};
+//employee.adress = {street: 'Fulterton drive 123', zipCode: '12345', city: 'Chicago'};
+
 console.log(employee.nickname);
 console.log(employee.adress.street);
 
