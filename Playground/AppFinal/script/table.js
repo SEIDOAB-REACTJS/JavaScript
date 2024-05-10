@@ -1,25 +1,31 @@
 'use strict';
 import {seedGenerator, uniqueId, randomNumber, deepCopy} from '../../../SeidoHelpers/seido-helpers.js';
 
-console.log("Hello world from table.js");
-
     //module global variables
-const _seeder = new seedGenerator();
-console.log(_seeder.latinSentence);
+    const _seeder = new seedGenerator();
+    let books = [];
 
     //Get Elements
     const bookList = document.querySelector("#bookList");
-
-    //div class="trFluid"
-    addRow("Inte nu igen, Alfons!", "Vet inte just nu", 2001, "1");
-    addRow("Inte nu igen, Martin!", "Martin", 2020, 0.4);
-    addRow("Inte nu igen, Stefan!", "Stefan", 2024, 5);
-    //add a row into #bookList
-
-
+    const btnPopulate = document.querySelector("#btnPopulate");
+    const btnClear = document.querySelector("#btnClear");
+ 
     //Add event listeners
+    btnPopulate.addEventListener("click", clickPopulate);
+    btnClear.addEventListener("click", clickClear);
 
     //Declare event handlers
+    function clickPopulate (e) {
+        populateBooks(5);
+        renderBooks();
+    }
+
+    function clickClear (e) {
+
+        books = [];
+        renderBooks();
+    }
+
 
     //helpers
     function addRow(bookTitle, bookAuthor, publishedYear, millionsSold) {
@@ -64,4 +70,31 @@ console.log(_seeder.latinSentence);
     
         bookList.appendChild(divRow);
     }
+
+    function renderBooks() {
+        while (bookList.firstElementChild !== null) {
+            bookList.removeChild(bookList.firstElementChild);
+        }
+
+        books.forEach(b => {addRow(b.bookTitle, b.bookAuthor, b.publishedYear, b.millionsSold)});
+    }
+
+    function populateBooks(nrBooks) {
+        for (let index = 0; index < nrBooks; index++) {
+    
+            const b = {};
+            b.bookTitle = _seeder.fromString('Alfons aberg, alfons bakar, oh nej alfons');
+            b.bookAuthor = _seeder.fromString("Mark Twain, Steven King, Mary Shelly");
+            b.millionsSold = randomNumber(1, 100);
+            b.publishedYear = randomNumber(1800, 2020);
+
+            books.push(b);
+        }
+    }
+
     //init
+    (function pageInit() 
+    {
+        populateBooks(5);
+        renderBooks();
+    })();
