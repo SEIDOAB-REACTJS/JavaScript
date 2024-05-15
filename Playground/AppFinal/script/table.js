@@ -5,27 +5,52 @@ import {seedGenerator, uniqueId, randomNumber, deepCopy} from '../../../SeidoHel
     const _seeder = new seedGenerator();
     let books = [];
 
+    //paging
+    const _pageSize = 5;
+    let _maxNrpages;
+    let _currentPage = 0;
+
     //Get Elements
     const bookList = document.querySelector("#bookList");
     const btnPopulate = document.querySelector("#btnPopulate");
     const btnClear = document.querySelector("#btnClear");
+    const btnPrev = document.querySelector("#btnPrev");
+    const btnNext = document.querySelector("#btnNext");
  
     //Add event listeners
     btnPopulate.addEventListener("click", clickPopulate);
     btnClear.addEventListener("click", clickClear);
+    btnPrev.addEventListener("click", clickPrev);
+    btnNext.addEventListener("click", clickNext);
 
     //Declare event handlers
     function clickPopulate (e) {
-        populateBooks(5);
-        renderBooks();
+
+        populateBooks(randomNumber(1,5));
+        renderBooks(_currentPage);
     }
 
     function clickClear (e) {
 
         books = [];
-        renderBooks();
+        _currentPage = 0;
+        renderBooks(_currentPage);
     }
 
+    function clickPrev (e){
+
+        if (_currentPage > 0 ) {
+            _currentPage--;
+            renderBooks(_currentPage);
+        }
+    }
+
+    function clickNext (e){
+        if (_currentPage < _maxNrpages-1) {
+            _currentPage++;
+            renderBooks(_currentPage);
+        }
+    }
 
     //helpers
     function addRow(bookTitle, bookAuthor, publishedYear, millionsSold) {
@@ -71,30 +96,33 @@ import {seedGenerator, uniqueId, randomNumber, deepCopy} from '../../../SeidoHel
         bookList.appendChild(divRow);
     }
 
-    function renderBooks() {
+    function renderBooks(_pageNr) {
         while (bookList.firstElementChild !== null) {
             bookList.removeChild(bookList.firstElementChild);
         }
 
-        books.forEach(b => {addRow(b.bookTitle, b.bookAuthor, b.publishedYear, b.millionsSold)});
+        let page = books.slice(_pageNr*_pageSize, _pageNr*_pageSize + _pageSize);
+        page.forEach(b => {addRow(b.bookTitle, b.bookAuthor, b.publishedYear, b.millionsSold)});
     }
 
     function populateBooks(nrBooks) {
         for (let index = 0; index < nrBooks; index++) {
     
             const b = {};
-            b.bookTitle = _seeder.fromString('Alfons aberg, alfons bakar, oh nej alfons');
-            b.bookAuthor = _seeder.fromString("Mark Twain, Steven King, Mary Shelly");
+            b.bookTitle = _seeder.latinSentence;
+            b.bookAuthor = _seeder.fullName;
             b.millionsSold = randomNumber(1, 100);
             b.publishedYear = randomNumber(1800, 2020);
 
             books.push(b);
         }
+
+        _maxNrpages = Math.ceil(books.length/_pageSize);
     }
 
     //init
     (function pageInit() 
     {
-        populateBooks(5);
-        renderBooks();
+        populateBooks(2);
+        renderBooks(_currentPage);
     })();

@@ -43,6 +43,7 @@ function remove(a, idx) {
 }
 
 //using splice
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
 a = ['elephant', 'lion', 'leopard', 'rhino', 'buffalo'];
 a.splice (2)
 console.log(a); //['elephant', 'lion']
@@ -56,5 +57,7 @@ a.splice (1, 2, 'tiger')
 console.log(a); //['elephant', 'tiger', 'rhino', 'buffalo']
 
 a = ['elephant', 'lion', 'leopard', 'rhino', 'buffalo'];
-a.splice (1, 0, 'tiger', 'wolf')
+let newAnimals = ['tiger', 'wolf', 'owl'];
+
+a.splice (1, 0, ...newAnimals)
 console.log(a); //['elephant', 'tiger', 'wolf', 'lion', 'leopard', 'rhino', 'buffalo']
