@@ -6,7 +6,7 @@ import {seedGenerator, uniqueId, randomNumber, deepCopy} from '../../../SeidoHel
     let books = [];
 
     //paging
-    const _pageSize = 5;
+    const _pageSize = 20;
     let _maxNrpages;
     let _currentPage = 0;
 
@@ -123,6 +123,6 @@ import {seedGenerator, uniqueId, randomNumber, deepCopy} from '../../../SeidoHel
     //init
     (function pageInit() 
     {
-        populateBooks(2);
+        populateBooks(100);
         renderBooks(_currentPage);
     })();
