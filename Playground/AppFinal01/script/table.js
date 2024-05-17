@@ -73,8 +73,7 @@ import {Book, LibraryService} from './library.js';
         divGroup1_2.appendChild(divFluent2);
         divGroup1_2.appendChild(divFluent3);
         divGroup1_2.appendChild(divFluent4);
-    
-    
+
         bookList.appendChild(divRow);
     }
 
@@ -85,6 +84,9 @@ import {Book, LibraryService} from './library.js';
 
         let response = _library.readBooks(_pageNr, _pageSize);
         response.pageItems.forEach(b => {addRow(b.title, b.author, b.publishedYear, b.millionsSold)});
+        
+        //for debugging
+        console.log(response.totalCount);
         
         _maxNrpages = response.maxNrpages;
     }

@@ -6,6 +6,11 @@
 const apiKeyNews = "d318329c40734776a014f9d9513e14ae";
 //const apiKeyNews = "6a2aa4837b194bbdb423edf71b380e8b"
 
+//url usage example
+//https://newsapi.org/v2/top-headlines?country=se&category=health&apiKey=d318329c40734776a014f9d9513e14ae
+
+
+
 async function myFetch(url) {
   try {
 

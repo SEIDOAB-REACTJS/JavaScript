@@ -2,7 +2,7 @@
 import {seedGenerator, uniqueId, randomNumber, deepCopy} from '../SeidoHelpers/seido-helpers.js';
 import {Book, LibraryService} from './play07-book.js';
 
-/*
+
 const b = new Book("Huckleberry Finn", "Mark Tawin", "Adventure", 100, 1875);
 console.log(b.bookId, b.toString());
 
@@ -15,11 +15,11 @@ console.log(b2.bookId, b2.toString());
 
 const books = new Book().seedMany(100, _seeder)
 console.log(books);
-*/
 
 
 
 
+/*
 //your webbpage
 const library = new LibraryService();
 console.log ("from my library");
@@ -33,4 +33,4 @@ console.log("Books", library.readBooks(2, 50));
 
 let bookdetail = library.readBook(p1.pageItems[0].bookId);
 console.log(bookdetail);
-
+*/

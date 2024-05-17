@@ -36,11 +36,9 @@ export function Book (title, author, genre, millionSold, publishYear){
 
 export function LibraryService () {
 
-    //temporary a list made from seedGeneration
-    //in reality a WebApi communication
     const _seeder = new seedGenerator();
-    this.books = new Book().seedMany(1000_000, _seeder);
-
+    this.books = new Book().seedMany(1_000, _seeder);
+     
     //services
     this.info = function (genre) {
 
