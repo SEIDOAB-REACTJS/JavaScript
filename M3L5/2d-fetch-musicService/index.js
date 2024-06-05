@@ -29,7 +29,7 @@ import musicService from'./music-group-service.js';
   //create a new music group
   let newItem = {
     "musicGroupId": "00000000-0000-0000-0000-000000000000",
-    "name": "Honkedy dori with a heart full of love",
+    "name": "Awsome Metallica",
     "establishedYear": 2024,
     "genre": 1,
     "albumsId": [],
@@ -66,8 +66,8 @@ import musicService from'./music-group-service.js';
   console.log(data);
 
   //change the name of the newly created music group
-  data = await _service.readMusicGroupAsync(musicgroupId)
-  data.name = data.name.replace(`Honkedy`, `Toppiwhoppy`);
+  data = await _service.readMusicGroupDtoAsync(musicgroupId)
+  data.name = data.name.replace(`Metallica`, `Toppiwhoppy`);
   data = await _service.updateMusicGroupAsync(musicgroupId, data)
   console.log(data);
 
