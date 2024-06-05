@@ -109,8 +109,8 @@ export class musicService {
     //using JavaScrip's ability to asign a function to a variable or property (like c# delegate)
     readMusicGroupAsync = async (id, flat=true) => this.#_readItemAsync(`${this.url}/csMusicGroups/ReadItem`, id, flat);
     
-    readMusicGroupDtoAsync = async (id) => this.#_readItemDtoAsync(`${this.url}/csMusicGroups/ReadItemDto`, id, flat);
-    
+    readMusicGroupDtoAsync = async (id) => this.#_readItemDtoAsync(`${this.url}/csMusicGroups/ReadItemDto`, id);
+   
     updateMusicGroupAsync = async (id, newItem) => this.#_updateItemAsync(`${this.url}/csMusicGroups/UpdateItem`, id, newItem);
   
     createMusicGroupAsync = async (newItem) => this.#_createItemAsync(`${this.url}/csMusicGroups/CreateItem`, newItem);
