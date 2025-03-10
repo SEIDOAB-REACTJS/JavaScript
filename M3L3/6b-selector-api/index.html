@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Adding Click Functionality to an Element</title>
+  </head>
+  <body>
+    <h1>Add click functionality to rows in a list</h1>
+  
+    <h1>My pets</h1>
+    <ul id="myPets">
+        <li>pet 1</li>
+        <li>pet 2</li>
+    </ul>
+
+    <h1>My vehicles</h1>
+    <ul id="myVehicles">
+        <li data-row-id="1">vehicle 1</li>
+        <li data-row-id="2">vehicle 2</li>
+    </ul>
+
+    <h1>My friends</h1>
+    <ul id="myFriends">
+        <li data-row-id="1"><a href = "#">friend 1</a></li>
+        <li data-row-id="2"><a href = "#">friend 2</a></li>
+    </ul>
+
+    <script type="module" src="click.js"></script>
+  </body>
+</html>
+
+<!-- Exercises
+1. Use querySelectorAll() to find all elements with a data-row-id wherever they are in the page
+2. Use querySelectorAll() to find all li elements with a data-row-id="1" wherever they are in the page
+3. In Quotes project page1 add a click handler to all the div tags making up the rows in the list. A click on
+   the row should open a windows.alert showing the quote being clicked.
+
+-->

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="./css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/form.css" />
+
+    <title>Bank revisited</title>
+</head>
+<body>
+    <h2 id="bankID">my bank</h2>
+    <button id="btnPrev">prev</button>
+    <button id="btnNext">next</button>
+    <h2>Accounts</h2>
+    <ul id="accountList">
+        <li>account1</li>
+    </ul>
+
+    <form class="formContainer" id="whoAreYou">
+        <div class="formIntroContainer">
+          <div>
+            <h1>Add an account to my bank</h1>
+            <h2>
+              Tell us a little bit of yourself and deposit your money.
+            </h2>
+          </div>
+          <b>Note: an asterisk (*) indicates a required field</b>
+        </div>
+
+        <fieldset>
+          <legend>Tell us about yourself <span>(3 of 3)</span></legend>
+    
+          <div class="formInputContainer">
+            <input id="firstName" name="firstName" placeholder="John" required />
+            <label for="firstName">What is your first name?</label>
+          </div>
+
+          <div class="formInputContainer">
+            <input id="lastName" name="lastName" placeholder="Smith" required />
+            <label for="lastName">What is your last name?</label>
+          </div>
+
+          <div class="formInputContainer">
+            <input id="city" name="city" type="text" list="cities" required />
+            <label for="city">What city do you live in?</label>
+            <datalist id="cities">
+              <select>
+                <option value="Stockholm"></option>
+                <option value="Copenhagen"></option>
+                <option value="Helsinki"></option>
+                <option value="Oslo"></option>
+              </select>
+            </datalist>    
+          </div>
+
+          <div class="formInputContainer">
+            <input id="money" name="money" type="number" min="0" max="10000" required />
+            <label for="money">How much money do you wanyt to deposit?</label>
+          </div>
+
+         </fieldset>
+    
+        <button class="form-Submit_Btn" type="submit" value="Submit Redemption">
+          <span class="flipper">
+            <span class="flipper-object flipper-vertical">
+              <span class="panel front">Ready?</span>
+              <span class="panel back">Submit</span>
+            </span>
+          </span>
+        </button>
+      </form>
+    <script type="module" src="./script/index.js"></script>
+</body>
+</html>

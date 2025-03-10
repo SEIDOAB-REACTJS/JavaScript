@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Adding Click Functionality to an Element</title>
+  </head>
+  <body>
+    <h1>Adding click functionality to an element</h1>
+
+    <button id="click-button">Click me!</button>
+
+    <p>
+      <a href="https://jseverywhere.io" id="click-link">Link me!</a>
+    </p>
+
+    <div tabindex="0" role="button" id="click-div">Click me</div>
+
+    <h1>Add click functionality to rows in a list</h1>
+    <ul id="myPets">
+        <li data-row-id="1">pet 1</li>
+        <li>pet 2</li>
+    </ul>
+
+    <h1>My vehicles</h1>
+    <ul id="myVehicles">
+        <li data-row-id="1">vehicle 1</li>
+        <li data-row-id="2">vehicle 2</li>
+    </ul>
+
+    <script type="module" src="click.js"></script>
+  </body>
+</html>
+
+<!-- Exercises
+1. In Quotes project home page, add a button and an <a> tag with click event handlers that opens an 
+   window.alert informing what element was clicked
+2. In Quotes project page1 add two buttons. Name them "Love quotes" and "All quotes". 
+   A click on each button should change the content of the list accordingly
+-->

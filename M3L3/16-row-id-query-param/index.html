@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Row id and passing query parameters</title>
+  </head>
+  <body>
+    <h1>Row id and passing query parameters</h1>
+  
+    <h1>My friends</h1>
+    <ul id="myFriends">
+        <li data-row-id="1"><a href="./page1.html?id=1&pagenr=1&filter=love">friend 1</a></li>
+        <li data-row-id="2"><a href="./page1.html?id=2&pagenr=1&filter=love">friend 2</a></li>
+        <li data-row-id="3"><a href="./page1.html?id=3&pagenr=1&filter=love">friend 3</a></li>
+        <li data-row-id="4"><a href="./page1.html?id=4&pagenr=500&filter=sun">friend 4</a></li>
+    </ul>
+
+    <ul id="list-of-items">
+    </ul>
+
+    <script type="module" src="quotes.js"></script>
+  </body>
+</html>
+
+<!-- Exercises
+  1. Modify Meny in Qotes barebone, and barebone_p1 to have three pages
+          <li class="nav-item"><a href="./barbone_p1.html" class="nav-link">All Quotes</a></li>
+          <li class="nav-item"><a href="./barbone_p1.html?filter=love" class="nav-link">Love quotes</a></li>
+          <li class="nav-item"><a href="./barbone_p1.html?filter=work" class="nav-link">Work quotes</a></li>
+
+  2. Modify barbone_p1 so it will read a query param filter and filter quotes accordingly.
+     if filter is not set, all quotes to be visible
+     if filter is present only quotes contaning the filter word should be visible  
+
+-->
