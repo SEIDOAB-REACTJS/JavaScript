@@ -96,54 +96,54 @@ class musicService {
 
     async readInfoAsync() 
     {
-      return await this.#_myFetch(`${this.url}/csAdmin/Info`);
+      return await this.#_myFetch(`${this.url}/Guest/Info`);
     }
 
     //#region CRUD MusicGroup
     //using traditional function syntax (like in C#)
     async readMusicGroupsAsync(pageNr, flat=false, filter=null, pageSize=10) 
     {
-      return await this.#_readItemsAsync(`${this.url}/csMusicGroups/Read`, pageNr, flat, filter, pageSize);
+      return await this.#_readItemsAsync(`${this.url}/MusicGroup/Read`, pageNr, flat, filter, pageSize);
     }
     
     //using JavaScrip's ability to asign a function to a variable or property (like c# delegate)
-    readMusicGroupAsync = async (id, flat=true) => this.#_readItemAsync(`${this.url}/csMusicGroups/ReadItem`, id, flat);
+    readMusicGroupAsync = async (id, flat=true) => this.#_readItemAsync(`${this.url}/MusicGroup/ReadItem`, id, flat);
     
-    readMusicGroupDtoAsync = async (id) => this.#_readItemDtoAsync(`${this.url}/csMusicGroups/ReadItemDto`, id);
+    readMusicGroupDtoAsync = async (id) => this.#_readItemDtoAsync(`${this.url}/MusicGroup/ReadItemDto`, id);
    
-    updateMusicGroupAsync = async (id, newItem) => this.#_updateItemAsync(`${this.url}/csMusicGroups/UpdateItem`, id, newItem);
+    updateMusicGroupAsync = async (id, newItem) => this.#_updateItemAsync(`${this.url}/MusicGroup/UpdateItem`, id, newItem);
   
-    createMusicGroupAsync = async (newItem) => this.#_createItemAsync(`${this.url}/csMusicGroups/CreateItem`, newItem);
+    createMusicGroupAsync = async (newItem) => this.#_createItemAsync(`${this.url}/MusicGroup/CreateItem`, newItem);
  
-    deleteMusicGroupAsync = async (id) => this.#_deleteItemAsync(`${this.url}/csMusicGroups/DeleteItem`, id);
+    deleteMusicGroupAsync = async (id) => this.#_deleteItemAsync(`${this.url}/MusicGroup/DeleteItem`, id);
     //#endregion
 
     //#region CRUD Album
-    readAlbumsAsync = async (pageNr, flat=false, filter=null, pageSize=10) => this.#_readItemsAsync(`${this.url}/csAlbums/Read`, pageNr, flat, filter, pageSize);
+    readAlbumsAsync = async (pageNr, flat=false, filter=null, pageSize=10) => this.#_readItemsAsync(`${this.url}/Album/Read`, pageNr, flat, filter, pageSize);
     
-    readAlbumAsync  = async (id, flat=true) => this.#_readItemAsync(`${this.url}/csAlbums/ReadItem`, id, flat);
+    readAlbumAsync  = async (id, flat=true) => this.#_readItemAsync(`${this.url}/Album/ReadItem`, id, flat);
 
-    readAlbumDtoAsync = async (id) => this.#_readItemDtoAsync(`${this.url}/csAlbums/ReadItemDto`, id);
+    readAlbumDtoAsync = async (id) => this.#_readItemDtoAsync(`${this.url}/Album/ReadItemDto`, id);
 
-    updateAlbumAsync = async (id, newItem) => this.#_updateItemAsync(`${this.url}/csAlbums/UpdateItem`, id, newItem);
+    updateAlbumAsync = async (id, newItem) => this.#_updateItemAsync(`${this.url}/Album/UpdateItem`, id, newItem);
 
-    createAlbumAsync = async (newItem) => this.#_createItemAsync(`${this.url}/csAlbums/CreateItem`, newItem);
+    createAlbumAsync = async (newItem) => this.#_createItemAsync(`${this.url}/Album/CreateItem`, newItem);
 
-    deleteAlbumAsync = async (id) => this.#_deleteItemAsync(`${this.url}/csAlbums/DeleteItem`, id);
+    deleteAlbumAsync = async (id) => this.#_deleteItemAsync(`${this.url}/Album/DeleteItem`, id);
     //#endregion
     
     //#region CRUD Artist
-    readArtistsAsync = async (pageNr, flat=false, filter=null, pageSize=10) => this.#_readItemsAsync(`${this.url}/csArtists/Read`, pageNr, flat, filter, pageSize);
+    readArtistsAsync = async (pageNr, flat=false, filter=null, pageSize=10) => this.#_readItemsAsync(`${this.url}/Artist/Read`, pageNr, flat, filter, pageSize);
     
-    readArtistAsync = async (id, flat=true) => this.#_readItemAsync(`${this.url}/csArtists/ReadItem`, id, flat);
+    readArtistAsync = async (id, flat=true) => this.#_readItemAsync(`${this.url}/Artist/ReadItem`, id, flat);
 
-    readArtistDtoAsync = async (id, flat=true) => this.#_readItemDtoAsync(`${this.url}/csArtists/ReadItemDto`, id);
+    readArtistDtoAsync = async (id, flat=true) => this.#_readItemDtoAsync(`${this.url}/Artist/ReadItemDto`, id);
     
-    updateArtistAsync = async (id, newItem) => this.#_updateItemAsync(`${this.url}/csArtists/UpdateItem`, id, newItem);
+    updateArtistAsync = async (id, newItem) => this.#_updateItemAsync(`${this.url}/Artist/UpdateItem`, id, newItem);
 
-    upsertArtistAsync = async (newItem) => this.#_upsertItemAsync(`${this.url}/csArtists/UpsertItem`, newItem);
+    upsertArtistAsync = async (newItem) => this.#_upsertItemAsync(`${this.url}/Artist/UpsertItem`, newItem);
 
-    deleteArtistAsync = async (id) => this.#_deleteItemAsync(`${this.url}/csArtists/DeleteItem`, id);
+    deleteArtistAsync = async (id) => this.#_deleteItemAsync(`${this.url}/Artist/DeleteItem`, id);
     //#endregion
 }
 

@@ -4,7 +4,7 @@ import musicService from'./music-group-service.js';
 
     //module global variables
     const _library = new LibraryService(sessionStorage);
-    const _musicservice = new musicService(`https://appmusicwebapinet8.azurewebsites.net/api`);
+    const _musicservice = new musicService(`https://seido-webservice-307d89e1f16a.azurewebsites.net/api`);
 
     //paging
     const _pageSize = 10;
