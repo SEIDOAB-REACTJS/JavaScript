@@ -8,18 +8,20 @@ console.group('DECLARING variables and constants');
 // Using strict mode revents you from using a variable before it is declared
 
 let numberTest = 42;
-let stringTest =  `Hello`;
+let stringTest =  `Hello ${numberTest}`;
 let booleanTest = true;
 let bigIntTest = 1234n;
 
 let symbolTest = Symbol("propertyName");    // ensures a unique identifier, even if propertyname is the same
-let objectTest = {};   // empty object, object root of every type on js
+let objectTest = {name: `Martin`, age: 21 + 40};   // empty object, object root of every type on js
+
+console.log(objectTest.phone)
+console.log(objectTest.age)
 
 // undefined, null, defines not set a value, NaN is used to indicate Not A Number
 let undefinedTest = undefined;
 let nullTest = null;
 let NaNTest = NaN;
-
 
 
 // constants are declared using const, and cannot be reassigned
@@ -81,7 +83,7 @@ console.log(b == d);      // true
 console.log(b === d);     // false  - more strict
 
 console.log(e == false);   //true
-console.log(e === false);  //true
+console.log(e === false);  //false
 
 console.log (d == c);     // true
 console.log (d === c);    // false    - more strict
@@ -108,7 +110,7 @@ console.log(s1 === s2);
 
 //Using a function to test  Equality
 name1.phone = '123';  //adding a property for test
-console.log(isEqual(name1, name2)); 
+console.log(isEqual(name1, 45)); 
 
 
 //For now, simply base value Equality on the objects string representation using JSON.stringify()
