@@ -34,7 +34,7 @@ if (typeof wrappedTest === 'string') {
 
 console.log('\nSafe way to Test for content in a string');
 if (stringTest) {
-  console.log('sloppy stringTest');
+  console.log('DANGER! sloppy stringTest');
 }
 if (typeof stringTest === 'string' && stringTest.length > 0) {
   console.log('stringTest is a string with text');
@@ -68,10 +68,14 @@ console.log(!stringTest); // falsy - Correct, it is a string
 stringTest = "Martin";
 if (stringTest)
   console.log("is a string");
-console.log(!stringTest); // truthy - WRONG, because empty string is evaluated to false
+
+stringTest = "";
+if (stringTest)
+  console.log("But it is still a string");
 
 stringTest = 5;
-console.log(!stringTest); // falsy - WRONG is is not a string, but any number except 0, -0 is evaluated to true
+if (stringTest)
+  console.log("It is no longer a string");
 
 
 console.log('\nTest for other types')
