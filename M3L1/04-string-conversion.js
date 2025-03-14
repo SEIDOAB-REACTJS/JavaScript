@@ -19,7 +19,7 @@ const scientificString = someNumber.toExponential(2);
 // scientificString = '1.24e+3'
 console.log(`${someNumber} with toExponential(2) is ${scientificString}`);
 
-
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat
 let formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
 let moneyString = formatter.format(someNumber);
 

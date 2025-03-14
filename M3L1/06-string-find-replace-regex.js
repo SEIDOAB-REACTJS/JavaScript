@@ -13,7 +13,7 @@ const searchString = "Now is the time aateaa and this is the time and that is th
 // You can see some patterns and test at https://regexr.com
 
 // below RegEx matches word that starts with 't' followed by any word character (0 or more times) and ends with 'e;
-const regexSearch = /\bt\w{2}e/g;   
+const regexSearch = /\bt\w/g;   
 
 const matches = searchString.matchAll(regexSearch);
 for (const match of matches) {
