@@ -15,6 +15,7 @@ console.log(typeof null);
 console.log(typeof undefined);
 console.log(typeof true);
 
+
 console.log('\nBasic string test');
 if (typeof stringTest === 'string') {
   console.log('stringTest is a string');
@@ -32,10 +33,13 @@ if (typeof wrappedTest === 'string') {
   console.log('wrappedTest is a string');
 }
 
-console.log('\nSafe way to Test for content in a string');
+
+console.log('\nUNSAFE way to Test for content in a string');
 if (stringTest) {
   console.log('DANGER! sloppy stringTest');
 }
+
+console.log('\nSafe way to Test for content in a string');
 if (typeof stringTest === 'string' && stringTest.length > 0) {
   console.log('stringTest is a string with text');
 }
@@ -79,7 +83,7 @@ if (stringTest)
 
 
 console.log('\nTest for other types')
-numberTest = NaN;
+numberTest = 5;
 if (typeof numberTest === 'number' && !Number.isNaN(numberTest)) {
   console.log(`${numberTest} is a valid number`);
 }
@@ -106,6 +110,23 @@ myFunc("Martin");
 myFunc("");
 myFunc(5);
 myFunc(0);
+
+
+function myFuncCorrectParamTest(myParam1, myParam2) {
+
+  if (typeof myParam1 !== 'string' || stringTest.length === 0) {
+    console.log("Wrong parameter"); 
+    return;
+  }
+  if (typeof myParam2 === 'number' && !Number.isNaN(myParam2)) {
+    console.log("Wrong parameter"); 
+    return;
+  }
+
+  //myParam1 is a non-empty string and myParam2 is a valid number
+
+}
+
 
 
 
