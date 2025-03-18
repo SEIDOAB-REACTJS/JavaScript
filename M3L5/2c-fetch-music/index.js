@@ -7,7 +7,7 @@
 //Let's use my WebApi of the most famous music bands through out history
 //https://appmusicwebapinet8.azurewebsites.net/swagger/index.html
 
-const url = "https://appmusicwebapinet8.azurewebsites.net/api";
+const url = "https://seido-webservice-307d89e1f16a.azurewebsites.net/api";
 
 async function myFetch(url, method = null, body = null) {
   try {
@@ -51,7 +51,7 @@ async function myFetch(url, method = null, body = null) {
 
   //Use GET to read first page of music groups
   //let reqUrl = `${url}/Read?flat=false&pageNr=0&pageSize=10`;  
-  let reqUrl = `${url}/csMusicGroups/Read?flat=false&pageNr=0&pageSize=10&filter=Floyd`;
+  let reqUrl = `${url}/MusicGroup/Read?flat=false&pageNr=0&pageSize=10&filter=Floyd`;
   let data = await myFetch(reqUrl);
   if (data) {
     console.log(`The database contains\n ${data.dbItemsCount} items`);
@@ -63,14 +63,14 @@ async function myFetch(url, method = null, body = null) {
   }
 
   //Use GET specific music groups
-  reqUrl = `${url}/csMusicGroups/ReadItem?flat=false&id=${data.pageItems[0].musicGroupId}`;
+  reqUrl = `${url}/MusicGroup/ReadItem?flat=false&id=${data.pageItems[0].musicGroupId}`;
   data = await myFetch(reqUrl);
   console.log(data);
 
   //Use POST to create a new music group
-  reqUrl = `${url}/csMusicGroups/CreateItem`;
+  reqUrl = `${url}/MusicGroup/CreateItem`;
   let newItem = {
-    "musicGroupId": "00000000-0000-0000-0000-000000000000",
+    "musicGroupId": null,
     "name": "Honkedy dori with a heart full of love",
     "establishedYear": 2024,
     "genre": 1,
@@ -83,9 +83,9 @@ async function myFetch(url, method = null, body = null) {
 
   const musicgroupId = data.musicGroupId;
   //Use Post to add an Album to the newly created music group
-  reqUrl = `${url}/csAlbums/CreateItem`;
+  reqUrl = `${url}/Album/CreateItem`;
   newItem = {
-    "albumId": "00000000-0000-0000-0000-000000000000",
+    "albumId": null,
     "seeded": true,
     "name": "Fire and ice on a mountain of snow",
     "releaseYear": 2024,
@@ -96,9 +96,9 @@ async function myFetch(url, method = null, body = null) {
   console.log(data);
   
   //Use POST to add an Artist to the newly created music group
-  reqUrl = `${url}/csArtists/UpsertItem`;
+  reqUrl = `${url}/Artist/UpsertItem`;
   newItem = {
-  "artistId": "00000000-0000-0000-0000-000000000000",
+  "artistId": null,
   "seeded": true,
   "firstName": "Huckleberry",
   "lastName": "Finn",
@@ -111,15 +111,15 @@ async function myFetch(url, method = null, body = null) {
   console.log(data);
 
   //Use PUT to change the name of the newly created music group
-  reqUrl = `${url}/csMusicGroups/ReadItemDto?id=${musicgroupId}`;
+  reqUrl = `${url}/MusicGroup/ReadItemDto?id=${musicgroupId}`;
   data = await myFetch(reqUrl);
   data.name = data.name.replace(`Honkedy`, `Toppiwhoppy`);
-  reqUrl = `${url}/csMusicGroups/UpdateItem/${musicgroupId}`;
+  reqUrl = `${url}/MusicGroup/UpdateItem/${musicgroupId}`;
   data = await myFetch(reqUrl, 'PUT', data);
   console.log(data);
 
   //Use DELETE to remove the newly created music group
-  reqUrl = `${url}/csMusicGroups/DeleteItem/${musicgroupId}`;
+  reqUrl = `${url}/MusicGroup/DeleteItem/${musicgroupId}`;
   data = await myFetch(reqUrl, 'DELETE');
   console.log(data);
 
