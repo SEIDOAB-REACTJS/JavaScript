@@ -12,9 +12,9 @@ import musicService from'./music-group-service.js';
   let data = await _service.readInfoAsync();
   console.log(data);
 
-  document.querySelector('#count-groups').innerText = `${data.nrSeededMusicGroups + data.nrUnseededMusicGroups} music groups`;
-  document.querySelector('#count-albums').innerText = `${data.nrSeededAlbums + data.nrUnseededAlbums} albums`;
-  document.querySelector('#count-artists').innerText = `${data.nrSeededArtists + data.nrUnseededArtists} artists`;
+  document.querySelector('#count-groups').innerText = `${data.db.nrSeededMusicGroups + data.db.nrUnseededMusicGroups} music groups`;
+  document.querySelector('#count-albums').innerText = `${data.db.nrSeededAlbums + data.db.nrUnseededAlbums} albums`;
+  document.querySelector('#count-artists').innerText = `${data.db.nrSeededArtists + data.db.nrUnseededArtists} artists`;
 
   const artistList = document.querySelector('#artists');
   let _data = await _service.readArtistsAsync(0);
@@ -30,6 +30,8 @@ import musicService from'./music-group-service.js';
   const albumList = document.querySelector('#albums');
   _data = await _service.readAlbumsAsync(0, true, "love");
   console.log(_data);
+
+  //set page size to read all albums in one go
   const nrItems = _data.dbItemsCount;
   _data = await _service.readAlbumsAsync(0, true, "love", nrItems);
 
@@ -44,7 +46,7 @@ import musicService from'./music-group-service.js';
   _data = await _service.readAlbumAsync(_data.pageItems[0].albumId, false);
   console.log(_data);
   const albumDetail = document.querySelector('#albumDetail');
-  albumDetail.innerHTML =  `${_data.name} by group ${_data.musicGroup.name} has sold ${_data.copiesSold}`;
+  albumDetail.innerHTML =  `${_data.name} by group ${_data.musicGroup.name} has sold ${_data.copiesSold} albums`;
 
 
 })();

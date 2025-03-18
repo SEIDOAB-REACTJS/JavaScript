@@ -5,8 +5,6 @@
 
 //Let's use fetch to access and modify a database through a WebApi using GET, POST, PUT, DELETE requests
 //Let's use my WebApi of the most famous music bands through out history
-//https://appmusicwebapinet8.azurewebsites.net/swagger/index.html
-
 const url = "https://seido-webservice-307d89e1f16a.azurewebsites.net/api";
 
 async function myFetch(url, method = null, body = null) {
