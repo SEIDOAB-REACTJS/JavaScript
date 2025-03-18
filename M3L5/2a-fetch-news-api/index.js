@@ -1,20 +1,20 @@
 //Just to ensure we force js into strict mode in HTML scrips - we don't want any sloppy code
 'use strict';  // Try without strict mode
 
-//https://newsapi.org/docs/endpoints/top-headlines
-//Example where News do not allow cors on developer license
-const apiKeyNews = "d318329c40734776a014f9d9513e14ae";
-//const apiKeyNews = "6a2aa4837b194bbdb423edf71b380e8b"
+const subscriptionKey = "256970bad92b4d5398613d17fcba4a7f";
+const endpoint = "https://api.bing.microsoft.com/v7.0/news";
 
 //url usage example
-//https://newsapi.org/v2/top-headlines?country=se&category=health&apiKey=d318329c40734776a014f9d9513e14ae
-
-
+//${endpoint}?mkt=en-us&category=${category}
 
 async function myFetch(url) {
   try {
 
-    let res = await fetch(url);
+    
+    let res = await fetch(url, {
+      headers: { 'content-type': 'application/json',  'Ocp-Apim-Subscription-Key': subscriptionKey}
+    });
+    
     if (res.ok) {
 
       console.log("Request successful");
@@ -46,12 +46,12 @@ async function myFetch(url) {
 
   //Here I write all the code to be executed at script top level, c# main level
   const newsList = document.getElementById('results');
-  const newsCategories = ['business', 'entertainment', 'general', 'health', 'science', 'sports', 'technology'];
+  const newsCategories = ['business', 'entertainment', 'world', 'sports', 'technology'];
 
   for (const category of newsCategories) {
 
-    const url = `https://newsapi.org/v2/top-headlines?country=se&category=${category}&apiKey=${apiKeyNews}`;
-    const news = await myFetch(url);
+    const uri = `${endpoint}?mkt=en-us&category=${category}`;
+    const news = await myFetch(uri);
 
     console.log(news);
 
@@ -62,9 +62,9 @@ async function myFetch(url) {
 
     //create a categoryList
     const categoryList = document.createElement('ul');
-    news.articles.forEach(article => {
+    news.value.forEach(article => {
       const listItem = document.createElement('li');
-      listItem.innerText = article.title;
+      listItem.innerText = article.description;
       categoryList.appendChild(listItem);
     });
     newsList.appendChild(categoryList);
