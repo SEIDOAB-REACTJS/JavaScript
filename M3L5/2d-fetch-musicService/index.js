@@ -6,14 +6,14 @@ import musicService from'./music-group-service.js';
 (async () => {
 
   //Initialize the service
-  const _service = new musicService(`https://appmusicwebapinet8.azurewebsites.net/api`);
+  const _service = new musicService(`https://seido-webservice-307d89e1f16a.azurewebsites.net/api`);
 
   //Read Database info async
   let data = await _service.readInfoAsync();
   console.log(data);
 
   //Read all groups
-  data = await _service.readMusicGroupsAsync(0, true, "queen",20);
+  data = await _service.readMusicGroupsAsync(0, true, "queen" ,20);
   //data = await _service.readMusicGroupsAsync(1, false);
   console.log(`The database contains\n ${data.dbItemsCount} items`);
   console.log(` ${data.pageCount} pages of maximum ${data.pageSize} items per page`);
@@ -28,7 +28,7 @@ import musicService from'./music-group-service.js';
 
   //create a new music group
   let newItem = {
-    "musicGroupId": "00000000-0000-0000-0000-000000000000",
+    "musicGroupId": null,
     "name": "Awsome Metallica",
     "establishedYear": 2024,
     "genre": 1,
@@ -41,7 +41,7 @@ import musicService from'./music-group-service.js';
   const musicgroupId = data.musicGroupId;
   //create an album to the newly created music group
   newItem = {
-    "albumId": "00000000-0000-0000-0000-000000000000",
+    "albumId": null,
     "seeded": true,
     "name": "Fire and ice on a mountain of snow",
     "releaseYear": 2024,
@@ -53,7 +53,7 @@ import musicService from'./music-group-service.js';
   
   //create an artist to the newly created music group
   newItem = {
-  "artistId": "00000000-0000-0000-0000-000000000000",
+  "artistId": null,
   "seeded": true,
   "firstName": "Huckleberry",
   "lastName": "Finn",

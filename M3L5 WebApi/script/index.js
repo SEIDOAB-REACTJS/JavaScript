@@ -6,7 +6,7 @@ import musicService from'./music-group-service.js';
 (async () => {
 
   //Initialize the service
-  const _service = new musicService(`https://appmusicwebapinet8.azurewebsites.net/api`);
+  const _service = new musicService(`https://seido-webservice-307d89e1f16a.azurewebsites.net/api`);
 
   //Read Database info async
   let data = await _service.readInfoAsync();

@@ -96,7 +96,7 @@ class musicService {
 
     async readInfoAsync() 
     {
-      return await this.#_myFetch(`${this.url}/csAdmin/Info`);
+      return await this.#_myFetch(`${this.url}/Guest/Info`);
     }
 
     //#region CRUD MusicGroup
