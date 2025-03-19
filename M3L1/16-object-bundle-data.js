@@ -28,6 +28,8 @@ console.log (employee.favoriteColor);
 
 
 // employee is a const, not the property this I can change
+//employee = {};
+employee.greeting = {};
 employee.firstName = 'Laban';
 console.log (employee.firstName);
 

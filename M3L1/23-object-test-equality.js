@@ -26,15 +26,17 @@ console.log (name2 === name3);   //true
 
 // you need to implement yourself value equality
 console.log('value equality');
-console.log (isEqual1(name1, name2)); 
-console.log (isEqual1(name2, name3));
+console.log (isEqual2(name1, name2)); 
+console.log (isEqual2(name2, name3));
 
 function isEqual1(obj1, obj2) {
    return obj1.firstName == obj2.firstName && obj1.lastName == obj2.lastName;
 }
 
 
-
+function isEqual2(obj1, obj2) {
+   return JSON.stringify(obj1) === JSON.stringify(obj2);
+}
 
 
 //alternatives is to use js libraries such as, 
