@@ -3,7 +3,7 @@ import {seedGenerator, uniqueId, randomNumber, deepCopy, isEqual} from '../Seido
 
 console.group('Declaring a multidimesional array (array-in-a-array')
 const books = [
-  ['A Tale of Two Cities', 'Charles Dickens', 'English', '1859', '200 million',], //note last comma in the array is ignored
+  ['A Tale of Two Cities', 'Charles Dickens', 'English', '1859', '200 million'], //note last comma in the array is ignored
   ['Le Petit Prince (The Little Prince)', 'Antoine de Saint-Exupéry', 'French', '1943', '150 million'],
   ["Harry Potter and the Philosopher's Stone", 'J. K. Rowling', 'English', '1997', '120 million']];
 

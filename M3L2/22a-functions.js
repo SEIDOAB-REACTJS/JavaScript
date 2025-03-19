@@ -4,8 +4,7 @@ import {seedGenerator, uniqueId, randomNumber, deepCopy, isEqual} from '../Seido
 
 function createFriend(_seeder)
 {
-    const f = {};
-    f.name = _seeder.fullName;
+    const f = {name: _seeder.fullName};
     return f;
 }
 
@@ -26,8 +25,15 @@ const createYetYetAnotherFriend = (_seeder) => {
 
 const _seeder = new seedGenerator();
 let friend = createFriend(_seeder);
+console.log(friend);
+
 friend = createAnotherFriend(_seeder);
+console.log(friend);
+
 friend = createYetAnotherFriend(_seeder);
+console.log(friend);
+
 friend = createYetYetAnotherFriend(_seeder);
+console.log(friend);
 
 

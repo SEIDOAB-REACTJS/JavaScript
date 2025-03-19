@@ -30,13 +30,13 @@
 
       <div class="container">
         <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+            <a href="./index.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
                 <span class="fs-4">My favorite Quotes</span>
             </a>
 
             <ul class="nav nav-pills">
-                <li class="nav-item"><a href="./barbone.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="./barbone_p1.html" class="nav-link">Page1</a></li>
+                <li class="nav-item"><a href="./index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="./quotes.html" class="nav-link">Quotes</a></li>
             </ul>
         </header>
       </div>
@@ -44,25 +44,18 @@
       <main>
 
         <!-- Individual pages -->
-        <!-- Page List of groups -->
-        <div class="container px-4 py-4" >
-          <button id="loveQBtn">Love Quotes</button>
-          <button id="allQBtn">All Quotes</button>
-          <h2 class="pb-2 border-bottom">List of quotes</h2>
-  
-          <div class="row row-cols-1 row-cols-lg-4 align-items-stretch g-4 py-5">
-            <div class="col-md-7 col-lg-10">
-                <div class="row mb-2 text-center">
-                  <div class="col-md-12 themed-grid-head-col">Quotes</div>
-                </div>
-                <div class="row mb-2 text-center" id="list-of-items">
-                  <div class="col-md-12 themed-grid-col d-none">
-                      AC/DC
-                  </div>
-                </div>
+        <!-- Page Welcome -->
+        <div class="container px-4 py-4" id="home">
+          <div class="bg-body-tertiary p-5 rounded">
+            <div class="col-sm-8 py-5 mx-auto">
+              <h1 class="display-5 fw-normal">Welcome to my quote page</h1>
+                <p class="fs-5">On this site I will keep track of the best quotes in the world</p>
+                <button class="btn btn-primary" id="myBtn">Click Me</button>
+                <a class="btn btn-primary" id="myAref" href="./quotes.html">Click me also</a>
             </div>
           </div>
         </div>
+
       </main>
 
 
@@ -72,7 +65,7 @@
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
             <div class="col-md-4 d-flex align-items-center">
                 <a href="./index.html" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
-                    <span class="mb-3 mb-md-0 text-body-secondary">&copy; 2023 Seido AB</span>
+                    <span class="mb-3 mb-md-0 text-body-secondary">&copy; 2025 Seido AB</span>
                 </a>
             </div>
         </footer>
@@ -85,6 +78,10 @@
       <!-- SeidoAB script helpers -->
       <script src="./script/seido/modals.js"></script>
       <script src="./script/seido/select-list-items.js"></script>
-      <script type="module" src="./script/quotes.js"></script>
+      <script type="module" src="./script/index.js"></script>
     </body>
 </html>
+
+<!-- Exercises
+    1. Review and understand the HTML and CSS structure. 
+    2. Start in Live Server and Click on the a tag links -->

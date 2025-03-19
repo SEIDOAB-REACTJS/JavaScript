@@ -39,7 +39,10 @@ for (let i = 0; i < animals.length; i++) {
 }
 
 //using foreach and arror function
-animals.forEach( (a) => console.log(a));
+animals.forEach( a => 
+  {
+    
+    console.log(a)});
 console.groupEnd
 
 

@@ -24,10 +24,16 @@ function _isEqualArray(arrayA, arrayB) {
     return true;
   }
 }
- 
+
+function isEqual2(obj1, obj2) {
+  return JSON.stringify(obj1) === JSON.stringify(obj2);
+}
+
 const fruitNamesA = ['apple', 'kumquat', 'grapefruit', 'kiwi'];
 const fruitNamesB = ['apple', 'kumquat', 'grapefruit', 'kiwi'];
 const fruitNamesC = ['avocado', 'squash', 'red pepper', 'cucumber'];
+
+console.log(isEqual2(fruitNamesA, fruitNamesB)); //true
 console.log(_isEqualArray(fruitNamesA, fruitNamesB)); // true
 console.log(_isEqualArray(fruitNamesA, fruitNamesC)); // false
 console.log(_isEqualArray(fruitNamesA.sort(), fruitNamesB.sort())); // true
