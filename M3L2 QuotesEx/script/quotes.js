@@ -21,7 +21,8 @@ function clickHandlerAllQ (e) {
 
 function clickHandlerLoveQ (e) {
 
-    //filter out all love quotes from _seeder.allQuote
+    //use Array.prototype.filter() to filter out all love quotes from _seeder.allQuote
+    //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
 }
 
 function clickHandlerClear (e) {
