@@ -2,31 +2,63 @@
 import {seedGenerator, uniqueId, randomNumber, deepCopy, isEqual} from '../../SeidoHelpers/seido-helpers.js';
 const _seeder = new seedGenerator();
 
+let quotesInList = _seeder.allQuotes;
+
+const pageSize = 5;
+const maxPageNr =  Math.ceil(_seeder.allQuotes.length/pageSize);
+let currentPageNr = 0;
+
+
 //Elements in DOM
 const _list = document.querySelector('#list-of-items');
 const clearBtn = document.querySelector('#clearBtn');
 const allQ = document.querySelector('#allQBtn');
 const loveQ = document.querySelector('#loveQBtn');
 
+const btnPrev = document.querySelector('#prevBtn');
+const btnNext = document.querySelector('#nextBtn');
+
+
 //Add Click handlers
 clearBtn.addEventListener('click', clickHandlerClear);
 allQ.addEventListener('click', clickHandlerAllQ);
 loveQ.addEventListener('click', clickHandlerLoveQ);
 
+btnPrev.addEventListener("click", clickHandlerPrev);
+btnNext.addEventListener("click", clickHandlerNext);
+
 function clickHandlerAllQ (e) {
-    let _quotes = _seeder.allQuotes;
+    let _quotes = quotesInList.slice(currentPageNr * pageSize, currentPageNr * pageSize + pageSize);
     fillList(_quotes);
 }
 
 function clickHandlerLoveQ (e) {
 
     //filter out all love quotes from _seeder.allQuote
-    let _quotes = _seeder.allQuotes.filter ((item) => item.quote.toLowerCase().includes('love'));
+    let _quotes = quotesInList.filter ((item) => item.quote.toLowerCase().includes('love'));
     fillList(_quotes);
 }
 
 function clickHandlerClear (e) {
     clearList();
+}
+
+
+//Paging
+function clickHandlerNext (e)
+{
+    if (currentPageNr < maxPageNr-1) {
+        currentPageNr++;
+    }
+    clickHandlerAllQ();
+}
+
+function clickHandlerPrev (e)
+{
+    if (currentPageNr > 0) {
+        currentPageNr--;
+    }
+    clickHandlerAllQ();
 }
 
 //Helpers
