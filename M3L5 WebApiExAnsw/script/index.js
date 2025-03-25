@@ -22,7 +22,7 @@ import musicService from'./music-group-service.js';
   for (const item of _data.pageItems) {
 
     const li = document.createElement("li");
-    li.innerHTML = `${item.firstName} ${item.lastName}`;
+    li.innerText = `${item.firstName} ${item.lastName}`;
     artistList.appendChild(li);
   }
   
@@ -31,14 +31,10 @@ import musicService from'./music-group-service.js';
   _data = await _service.readAlbumsAsync(0, true, "love");
   console.log(_data);
 
-  //set page size to read all albums in one go
-  const nrItems = _data.dbItemsCount;
-  _data = await _service.readAlbumsAsync(0, true, "love", nrItems);
-
   for (const item of _data.pageItems) {
 
     const li = document.createElement("li");
-    li.innerHTML = `${item.name}`;
+    li.innerText = `${item.name}`;
     albumList.appendChild(li);
   }
 
@@ -46,7 +42,7 @@ import musicService from'./music-group-service.js';
   _data = await _service.readAlbumAsync(_data.pageItems[0].albumId, false);
   console.log(_data);
   const albumDetail = document.querySelector('#albumDetail');
-  albumDetail.innerHTML =  `${_data.name} by group ${_data.musicGroup.name} has sold ${_data.copiesSold} albums`;
+  albumDetail.innerText =  `${_data.name} was made by the group ${_data.musicGroup.name}.`;
 
 
 })();
@@ -54,9 +50,12 @@ import musicService from'./music-group-service.js';
 
 /* Exercise
 
-1. Make a list of the first 10 artists
-2. Make a list of the all the albums containing the work "love";
-3. Read all the details of the 1st album above (ex 2)
+1. Fill in the WebApi info with correct values from the WebApi, Music groups, Albums, Artists, read from  _service.readInfoAsync()
+2. Make a list of page0 of the albums containing the word "love" - fill in as <li> in tag <ul id="albums"></ul>
+3. Make a list of page0 of artists, with pagesize 10 - fill in as <li> in tag <ul id="artists"></ul>
+4. Read all the details of the 1st album above (ex 3)
+   <Album name> was made by the group <Musicgroup Name>
+   fill it in the tag <p id="albumDetail"></p>
 */
 
 

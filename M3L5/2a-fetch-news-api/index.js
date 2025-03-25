@@ -26,8 +26,8 @@ async function myFetch(url) {
     else {
 
       //typcially you would log an error instead
-      console.log(`Failed to recieved data from server: ${res.status}`);
-      alert(`Failed to recieved data from server: ${res.status}`);
+      console.log(`Failed to recieved data from server: ${res.status} - ${res.statusText}`);
+      alert(`Failed to recieved data from server: ${res.status} - ${res.statusText}`);
     }
   }
   catch (err) {

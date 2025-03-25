@@ -36,6 +36,7 @@ let o = {greeting:'hello'};
 _proto = Object.getPrototypeOf(o);
 
 console.log(_proto);            //Object literals {} has Object as prototype, inherited properties and functions from Object
+console.log(o)
 console.log(o.toString());      //Object has toString() defined for example
 
 //now I assign my own toString directly to object
@@ -58,6 +59,7 @@ let obj1 = Object.create(_proto);    //obj1 now has _proto as prototype
 let obj2 = Object.create(_proto);    //obj1 now has _proto as prototype
 
 console.log(obj1.prot_prop1, obj1.prot_prop2);  //And the properties are inherited
+console.log(obj2.prot_prop1, obj2.prot_prop2);  //And the properties are inherited
 console.log(obj1);                              //But not visible when you write the object
 console.log(_proto);              //Only when showing prototype
 

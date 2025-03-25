@@ -14,6 +14,7 @@ for (const q of _quotes) {
     const li = document.createElement('li');
 
     //Note, this will be converted in the tag as data-item-id
+    //https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset
     li.dataset.itemId = q.id;
 
     const a = document.createElement('a');
