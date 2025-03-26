@@ -1,7 +1,7 @@
 //Just to ensure we force js into strict mode in HTML scrips - we don't want any sloppy code
 'use strict';  
 
-import musicService from'./music-group-service.js';
+import musicService from'./music-group-f-service.js';
 
 (async () => {
 
