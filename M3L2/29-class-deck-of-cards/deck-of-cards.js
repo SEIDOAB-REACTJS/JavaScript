@@ -1,5 +1,6 @@
 //Just to ensure we force js into strict mode in HTML scrips - we don't want any sloppy code
 'use strict';  // Try without strict mode
+import {seedGenerator, uniqueId, randomNumber, deepCopy, isEqual} from '../SeidoHelpers/seido-helpers.js';
 
 //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import
 import { prototypeCard } from './playing-card.js';
@@ -77,5 +78,6 @@ const deck = new deckOfCards();
 /* Exercise
 1. write function this.count, this.dealOne, this.shuffle
 2. Test the constructor function deckOfCards() by running the test code
+
 
 */

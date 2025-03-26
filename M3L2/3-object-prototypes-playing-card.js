@@ -107,11 +107,30 @@ card6.spriteRow = 3;  // OK
 console.log('' + card6);
 console.groupEnd();
 
+//Exercise answer
+let cards = [];
+let suits = ["Club", "Diamond", "Heart", "Spade"];
+let numeral = ["Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten",
+    "Knight", "Queen", "King", "Ace"];
+
+for (const s of suits) {
+
+    for (const n of numeral) {
+
+        let card = Object.create(cardProto);
+        card.suit = s;
+        card.numeral = n;
+
+        cards.push(card);
+    }
+}
+
+console.log(cards);
 
 /*Exercices
 1. create a playing card, King of Diamonds, Queen of Hearts, using the prototype cardProto and print it out.
 2. create array deckOfCards using below arays to initialize the deck-of-cards in loops
-        const suits = ["Clubs", "Spades", "Diamonds", "Hearts"];
+        const suits = ["Club", "Spade", "Diamond", "Heart"];
         comst numeral = ["Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten",
             "Knight", "Queen", "King", "Ace"];
 3. print out the deckOfCards.
