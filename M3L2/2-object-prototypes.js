@@ -48,6 +48,8 @@ console.log('' + o);             //See the trick here, forcing o to use toString
 //I can change toString() of the prototype object without affecting the child
 _proto.toString = function () { return `${this.greeting}`; };
 console.log('' + _proto);    //Prototype, notice property greeting is undefined in the property
+
+delete o.toString;           //making sure childs version of toString is removed
 console.log('' + o);         //Child, notice property greeting is now defined as it is the object
 console.groupEnd();
 

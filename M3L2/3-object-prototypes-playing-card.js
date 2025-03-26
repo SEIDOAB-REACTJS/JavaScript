@@ -109,7 +109,7 @@ console.groupEnd();
 
 
 /*Exercices
-1. create a playing card, King of Diamonds, using the prototype cardProto and print it out.
+1. create a playing card, King of Diamonds, Queen of Hearts, using the prototype cardProto and print it out.
 2. create array deckOfCards using below arays to initialize the deck-of-cards in loops
         const suits = ["Clubs", "Spades", "Diamonds", "Hearts"];
         comst numeral = ["Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten",
