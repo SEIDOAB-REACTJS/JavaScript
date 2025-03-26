@@ -57,7 +57,7 @@ async function myFetch(url) {
 
     //Create a header of the news category
     const newsCat = document.createElement('h2');
-    newsCat.innerHTML = category;
+    newsCat.innerText = category;
     newsList.appendChild(newsCat);
 
     //create a categoryList

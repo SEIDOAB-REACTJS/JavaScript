@@ -40,7 +40,7 @@ function musicService (url) {
       }
     }
 
-    this.readItemsAsync = async function (reqUrl, pageNr, flat, filter, pageSize)
+    this._readItemsAsync = async function (reqUrl, pageNr, flat, filter, pageSize)
     {
       reqUrl += `?flat=${flat}&pageNr=${pageNr}&pageSize=${pageSize}`;
       if (filter != null)

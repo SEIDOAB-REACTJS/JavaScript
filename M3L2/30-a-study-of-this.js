@@ -75,4 +75,3 @@ class classClass {
 const cc = new classClass();
 cc.funcEmbedded(); 
 console.groupEnd();
-*/

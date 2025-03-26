@@ -12,16 +12,23 @@ function deckOfCards() {
         let numeral = ["Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten",
             "Knight", "Queen", "King", "Ace"];
 
+        let suitOrder = 0;
         for (const s of suits) {
 
+            let numeralOrder = 2;
             for (const n of numeral) {
 
                 let card = Object.create(prototypeCard);
                 card.suit = s;
+                card.suitOrder = suitOrder;
+
                 card.numeral = n;
+                card.numeralOrder = numeralOrder;
 
                 this.cards.push(card);
+                numeralOrder++;
             }
+            suitOrder++;
         }
     }
 
@@ -30,7 +37,7 @@ function deckOfCards() {
     this.dealOne = function () {
 
         if (this.cards.length <= 0)
-            throw new TypeError('Deck is empty');
+            throw new Error('Deck is empty');
 
         return this.cards.pop();
     }
@@ -38,14 +45,18 @@ function deckOfCards() {
     this.shuffle = function () {
 
         //Shuffle between 100 and 1000 times
-        let nrShuffles = rnd(100, 999+1);
+        let nrShuffles = rnd(100, 1000);
         for (let i = 0; i < nrShuffles; i++) {
 
             let loCard = rnd(0, this.cards.length);
             let hiCard = rnd(0, this.cards.length);
 
             //swap the cards
-            [this.cards[loCard], this.cards[hiCard]] = [this.cards[hiCard], this.cards[loCard]];
+            let t = this.cards[loCard];
+            this.cards[loCard] = this.cards[hiCard];
+            this.cards[hiCard] = t;
+            
+            //[this.cards[loCard], this.cards[hiCard]] = [this.cards[hiCard], this.cards[loCard]];
         }
 
         //randomNumber = Math.floor(Math.random() * (max - min) ) + min;
