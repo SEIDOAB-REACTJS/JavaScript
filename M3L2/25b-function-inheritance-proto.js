@@ -11,38 +11,33 @@ Animal.prototype.sayHello = function () {
 
 function Dog(name, breed) {
     
-    //Inheritance - Call Parent Constructor and assigning Animal to this
+    //Inheritance step1 - Call Parent Constructor and assigning Animal to this
     Animal.call(this, name);
     this.breed = breed;
+
+    this.sound = function () {
+        console.log(`${this.name}, a ${this.breed}, says: Woof!`);
+    };
 }
 
-//share prototype
+//Inheritance step2 - Set child prototype to parent prototype and constructor to child
 Dog.prototype = Object.create(Animal.prototype);
-
-//Set prototype for Dog
 Dog.prototype.constructor = Dog;
-Dog.prototype.sound = function () {
-    console.log(`${this.name} says: Woof!`);
-};
 
 
 function Cat(name, breed) {
 
-    //Inheritance - Call Parent Constructor and assigning Animal to this
+    //Inheritance step1 - Call Parent Constructor and assigning Animal to this
     Animal.call(this, name); 
 
     this.breed = breed;
-    this.sound = function () {console.log(`${this.name}, a ${this.breed}, says: Miau!`)};
+    this.sound = function () {
+        console.log(`${this.name}, a ${this.breed}, says: Miau!`)};
 }
 
-//share prototype
+//Inheritance step2 - Set child prototype to parent prototype and constructor to child
 Cat.prototype = Object.create(Animal.prototype);
-
-//Set prototype for Dog
 Cat.prototype.constructor = Cat;
-Cat.prototype.sound = function () {
-    console.log(`${this.name} says: Woof!`);
-};
 
 
 const myDog = new Dog("Buddy", "Golden Retriever");

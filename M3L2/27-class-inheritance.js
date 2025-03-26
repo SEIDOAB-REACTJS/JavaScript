@@ -5,58 +5,39 @@ import {seedGenerator, uniqueId, randomNumber, deepCopy, isEqual} from '../Seido
 class Animal {
 
   constructor(name) {
-    this.speed = 0;
     this.name = name;
   }
 
-  run() {
-    console.log(`${this.name} runs with speed ${this.speed}.`);
-  }
-
-  stop() {
-    this.speed = 0;
-    console.log(`${this.name} stands still.`);
-  }
-
+  sayHello() {
+    console.log(`Hello, I am ${this.name}!`);
+  };
 }
 
-class Rabbit extends Animal {
+class Dog extends Animal {
 
-  constructor (name)
+  constructor (name, breed)
   {
     super(name);
-    this.speed = 20;
-  }
-  hide() {
-    console.log(`${this.name} hides!`);
+    this.breed = breed;
   }
 
-  stop() {
-    super.stop(); // call parent stop
-    this.hide(); // and then hide
-  }
+  sound() {console.log(`${this.name}, a ${this.breed}, says: Woof! Woof!`)};
 }
 
-class Turtle extends Animal {
-  constructor (name)
+class Cat extends Animal {
+  constructor (name, breed)
   {
     super(name);
-    this.speed = 1;
-  }
-  hide() {
-    console.log(`${this.name} retracts into it's shell!`);
+    this.breed = breed;
   }
 
-  stop() {
-    super.stop(); // call parent stop
-    this.hide(); // and then hide
-  }
+  sound() {console.log(`${this.name}, a ${this.breed}, says: Miau!`)};
 }
 
-const rabbit = new Rabbit("White Rabbit");
-rabbit.run(); // White Rabbit runs with speed 5.
-rabbit.stop(); // White Rabbit stands still. White Rabbit hides!
+const myDog = new Dog("Buddy", "Golden Retriever");
+myDog.sayHello();  // Hello, I am Buddy!
+myDog.sound();     // Buddy, a Golden Retriever, says: Woof! Woof!
 
-let turtle = new Turtle("Sleepy Turtle");
-turtle.run();
-turtle.stop();
+const myCat = new Cat("Charlie", "Small Tiger");
+myCat.sayHello();
+myCat.sound();

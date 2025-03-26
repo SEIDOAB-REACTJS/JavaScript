@@ -23,10 +23,10 @@ class myChild extends mySuper {
     this.superProp1 = 'childProp1';
   }
   childMethod1() {
-    console.log(`childMethod1 says this.superProp1=${this.superProp1}`);     //note you will get this.superPropt
+    console.log(`childMethod1 says this.superProp1=${this.superProp1}`);     //note you will get this.superProp1
 
-    //Note that instance fields are set on the instance instead of the constructor's prototype, 
-    //so you can't use super to access the instance field of a superclass.
+    //Note that instance props are set on the instance instead of the constructor's prototype, 
+    //so you can't use super to access the instance props of a superclass.
     console.log(`childMethod1 says super.superProp1=${super.superProp1}`);    //will not work -> undefined
     
     //but you can access a function in super
