@@ -35,7 +35,7 @@ console.groupEnd();
 
 console.group('Alternative I want to use OOP principles and encapulate the functions inta a prototype');
 //First create the prtottyep object and assign the functions I want to share
-let proto = {
+let cardProto = {
     cardColor: function () {    //note, no parameter
         switch (this.suit) {    //note, I use this
             case 'Heart':
@@ -59,9 +59,9 @@ let proto = {
 }
 
 //now we can assign the prototype to the created objects
-Object.setPrototypeOf(card1, proto);
-Object.setPrototypeOf(card2, proto);
-Object.setPrototypeOf(card3, proto);
+Object.setPrototypeOf(card1, cardProto);
+Object.setPrototypeOf(card2, cardProto);
+Object.setPrototypeOf(card3, cardProto);
 
 console.log('' + card1);
 console.log('' + card2);
@@ -71,7 +71,7 @@ console.groupEnd();
 
 console.group('We can create new cards with the prototype, but the syntax will a bit different');
 //Next, create the objects with above protottype
-let card4 = Object.create(proto);
+let card4 = Object.create(cardProto);
 card4.suit = "Heart";
 card4.numeral = "Queen";
 card4.value = 12;
@@ -81,18 +81,25 @@ console.log('' + card4);
 console.groupEnd();
 
 console.group('I can ofcourse clone the object');
-let card5 = Object.create(proto);
+let card5 = Object.create(cardProto);
 for (const key in card2) {
     if (card2.hasOwnProperty(key)) {
         card5[key] = card2[key];
     }
 }
 console.log('' + card5);
+
+//alternative cloning using ... operator
+let card5a = {...card5};
+Object.setPrototypeOf(card5a, cardProto);
+console.log('' + card5a);
+
 console.groupEnd();
+
 
 console.group('Typesafer way is to create object using a propertiesObject');
 //properties will be readonly by default - which is in this case good, unless you specify writable
-let card6 = Object.create(proto,
+let card6 = Object.create(cardProto,
     { suit: { value: "Heart" }, numeral: { value: "Knight" }, value: { value: 13 }, spriteRow: { value: 2, writable: true }, spriteCol: { value: 2 } });
 
 //card5.numeral = "Five"; // TypeError as readonly
@@ -100,3 +107,12 @@ card6.spriteRow = 3;  // OK
 console.log('' + card6);
 console.groupEnd();
 
+
+/*Exercices
+1. create a playing card, King of Diamonds, using the prototype cardProto and print it out.
+2. create array deckOfCards using below arays to initialize the deck-of-cards in loops
+        const suits = ["Clubs", "Spades", "Diamonds", "Hearts"];
+        comst numeral = ["Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten",
+            "Knight", "Queen", "King", "Ace"];
+3. print out the deckOfCards.
+*/

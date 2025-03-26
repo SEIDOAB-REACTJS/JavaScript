@@ -26,7 +26,7 @@ const prototypeCard = {
     toString: function () { return `${this.suit} of ${this.numeral} is a ${this.cardColor} ${this.cardFaceOrNumeral} card` }
 }
 
-/*
+
 //Just to test creating a couple of cards
 let card1 = Object.create(prototypeCard,
     {
@@ -35,5 +35,12 @@ let card1 = Object.create(prototypeCard,
     });
 
 console.log('' + card1);
-*/
+
+let card2 = Object.create(prototypeCard);
+card2.suite = 'Heart'
+card2.numeral = 2;
+
+
+console.log('' + card2);
+
 export {prototypeCard}
