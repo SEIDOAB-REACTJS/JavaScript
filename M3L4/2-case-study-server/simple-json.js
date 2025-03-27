@@ -17,7 +17,7 @@
 //https://www.npmjs.com/package/formidable
 
 
-//Start the server by opening a terminal in /case-study-server and type node simple-with-form.js
+//Start the server by opening a terminal in /case-study-server and type node simple-json.js
 
 //required node library
 const path = require('path');
@@ -26,7 +26,6 @@ const fs = require('fs');
 //from the downloaded npm
 const express = require('express');
 const cors = require('cors');
-const formidable = require('formidable');
 
 //init express
 const app = express();
@@ -38,22 +37,18 @@ app.use(cors({
 
 app.get('/api/download', (req, res) => {
 
-  response = readJSON('form_data.json');
+  response = readJSON('json_data.json');
   res.send(response);
 });
 
-app.post('/api/upload', (req, res, next) => {
-  const form = formidable({ multiples: true });
+app.post('/api/upload', (req, res) => {
 
-  form.parse(req, (err, fields, files) => {
-    if (err) {
-      next(err);
-      return;
-    }
+    const b = req.body;
 
-    writeJSON('form_data.json', {err, fields, files});
-    res.json({ fields, files });
-  });
+    writeJSON('json_data.json', b);
+
+  //respons with the json file
+  res.json(b);
 });
 
 
