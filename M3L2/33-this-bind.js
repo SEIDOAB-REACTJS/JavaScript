@@ -1,9 +1,7 @@
 //Just to ensure we force js into strict mode in HTML scrips - we don't want any sloppy code
 'use strict';  // Try without strict mode
 
-//This is another example of where this context is peculiar, Callbacks
-
-// This is the constructor function for the Counter object.
+//This is an example of where this context is peculiar, Callbacks
 function Counter(from, to, divElement) {
   this.currentCount = from;
   this.finishCount = to;
@@ -11,7 +9,6 @@ function Counter(from, to, divElement) {
 
 Counter.prototype = {
 
-  // The incrementCounter() method
   decrementCounter: function () {
     this.currentCount -= 1;
     console.log(this.currentCount);
@@ -21,16 +18,15 @@ Counter.prototype = {
       // Schedule this function to run again after 1 second.
       // Increament counter is a Callback from setTimer
 
-      //will cause an error since the call back will operate on a wrong this
-      //setTimeout(this.decrementCounter, 1000);  // number error
+      // In the CallBack decrementCounter this will be undefined
+      setTimeout(this.decrementCounter, 1000);  // number error
 
       //Bind to 'this' ensures all further callback are bound to this object, Counter
-      
-      const decrementCounterFixed = this.decrementCounter.bind(this);
-      setTimeout(decrementCounterFixed, 1000);
+      //const decrementCounterFixed = this.decrementCounter.bind(this);
+      //setTimeout(decrementCounterFixed, 1000);
 
       //This is the same as above
-//      setTimeout(this.decrementCounter.bind(this), 1000);
+      //setTimeout(this.decrementCounter.bind(this), 1000);
     }
   },
 

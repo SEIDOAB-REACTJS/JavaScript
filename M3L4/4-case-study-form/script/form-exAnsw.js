@@ -16,8 +16,6 @@ function submitHandler(e)
 
   const name = formData.get('petName');
   console.log(name);
-  
-
 }
 
 
