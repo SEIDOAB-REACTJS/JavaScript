@@ -1,12 +1,18 @@
 //Just to ensure we force js into strict mode in HTML scrips - we don't want any sloppy code
 'use strict';  // Try without strict mode
 
-//Start the server by opening a terminal in /case-study-server and type node 3b-post-and-read-json-server.js
-const urlGetPost = 'http://localhost:3000/ingredients';      //used for get and post
+const groupName = document.querySelector('#groupName');
+const genre = document.querySelector('#genre');
+const established = document.querySelector('#established');
+
+//Start the server by opening a terminal in /case-study-server and type node simple-json.js
+const urlGetPost = 'http://localhost:3000/api/download';      //used for get and post
 
 async function myFetch(url, method = null, body = null) {
   try {
 
+    console.log("Request initiate");
+    
     let res = await fetch(url, {
       method: method ?? 'GET',
       headers: { 'content-type': 'application/json' },
@@ -36,18 +42,15 @@ async function myFetch(url, method = null, body = null) {
   }
 }
 
-const myForm = document.getElementById('btnGetPost');
-myForm.addEventListener('click', async (event) => {
+(async () => {
 
-  //read a url, get an object convert it to an object from url
-  let ingredients = await myFetch(urlGetPost);
-  console.log(ingredients);
+    //read a url, get an object convert it to an object from url
+    let data = await myFetch(urlGetPost);
 
-  //add an ingredient
-  ingredients.push({ id: ingredients.length + 1, item: "another goodie" });
+    console.log("Data Recieved successfully");
+    console.log(data);
 
-  //write the object to the url
-  ingredients = await myFetch(urlGetPost, 'POST', ingredients);
-  console.log(ingredients);
+    //set the values
+    [groupName.value, genre.value, established.value] = [data.name, data.genre, data.established];
 
-});
+})();
