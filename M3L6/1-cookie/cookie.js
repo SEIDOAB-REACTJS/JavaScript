@@ -1,25 +1,38 @@
 //Just to ensure we force js into strict mode in HTML scrips - we don't want any sloppy code
 'use strict';  // Try without strict mode
 
-//https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies
-//An HTTP cookie (web cookie, browser cookie) is a small piece of data that a server sends to a user's web browser. 
-//The browser may store the cookie and send it back to the same server with later requests.
-//https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie
+// set the cookie
+function setData() {
+  const formKey = document.getElementById('key').value;
+  const formValue = document.getElementById('value').value;
 
+  const cookieVal = `${formKey}=${encodeURIComponent(formValue)}`;
+  document.cookie = cookieVal;
+}
 
-const book = 'JavaScript Cookbook: Programming the Web';
-document.cookie = 'author=Adam';
-document.cookie = `title=${encodeURIComponent(book)}`;
-console.log(document.cookie);
+// retrieve the cookie value for a specified key
+function getData() {
+  const keyValue = document.getElementById('key').value;
+  const cookie = document.getElementById('cookiestr');
+  cookie.innerHTML = '';
 
-// cookie expires in 1 day
-document.cookie = 'user=Abigail;  max-age=86400';
+  //code to reverse encodeURIComponent () of keyValue
+  const keyValueClean = keyValue.replace(/([.*+?^=!:${}()|[\]/\\])/g, '\\$1');
+  const regex = new RegExp(`(?:^|;)\\s?${keyValueClean}=(.*?)(?:;|$)`, 'i');
+  const match = document.cookie.match(regex);
+  const value = (match && decodeURIComponent(match[1])) || '';
+  cookie.innerHTML = `<p>${value}</p>`;
+}
 
-// delete a cookie
-function eraseCookie(key) {
-  const cookie = `${key}=;expires=Thu, 01 Jan 1970 00:00:00 UTC`;
+// remove the cookie for a specified key
+function removeData() {
+  const key = document.getElementById('key').value;
+  document.getElementById('cookiestr').innerHTML = '';
+
+  const cookie = `${key}=; expires=Thu, 01 Jan 1970 00:00:00 UTC`;
   document.cookie = cookie;
 }
 
-eraseCookie('author');
-console.log(document.cookie);
+document.getElementById('set').onclick = setData;
+document.getElementById('get').onclick = getData;
+document.getElementById('erase').onclick = removeData;

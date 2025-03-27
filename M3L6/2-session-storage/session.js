@@ -3,7 +3,6 @@
 
 //https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage
 //sessionStorage allows us to easily store information in the user’s browser for a single session. 
-//A session lasts for as long as a single browser tab is open. 
 
 
 sessionStorage.setItem('name', 'Adam');
@@ -28,7 +27,7 @@ console.log(`The stored city is ${city}`);
 sessionStorage.removeItem('name');
 
 // remove all items from storage
-sessionStorage.clear();
+//sessionStorage.clear();
 
 // returns 0
 console.log(sessionStorage.length);
