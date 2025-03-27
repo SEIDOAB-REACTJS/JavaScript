@@ -1,6 +1,7 @@
 //Just to ensure we force js into strict mode in HTML scrips - we don't want any sloppy code
 'use strict';  // Try without strict mode
 
+//Start the server by opening a terminal in /case-study-server and type node 3b-post-and-read-json-server.js
 const urlGetPost = 'http://localhost:3000/ingredients';      //used for get and post
 
 async function myFetch(url, method = null, body = null) {

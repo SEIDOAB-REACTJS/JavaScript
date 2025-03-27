@@ -6,7 +6,7 @@
 
 const myForm = document.getElementById('my-form');
 
-//Start the server by opening a terminal in /case-study-server and type node simple-with-form.js
+//Start the server by opening a terminal in /case-study-server and type node 3-formData-post-server.js
 const url = 'http://localhost:3000/api/upload';
 
 

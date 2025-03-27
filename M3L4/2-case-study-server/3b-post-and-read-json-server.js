@@ -4,6 +4,7 @@
 
 //https://expressjs.com/en/starter/hello-world.html
 //https://expressjs.com/en/starter/installing.html
+//https://expressjs.com/en/4x/api.html#express.json
 
 //in your webapplication project's server directory open a terminal
 //install package.json using 'npm init -y'
@@ -12,8 +13,8 @@
 
 //install cors
 //https://www.section.io/engineering-education/how-to-use-cors-in-nodejs-with-express/
+//npm i cors express nodemon
 
-//Start the server by opening a terminal in /case-study-server and type node simple-json.js
 
 //required node library
 const path = require('path');
@@ -35,29 +36,58 @@ app.use(express.json());
 //location of the json files
 const appDir = './app_data';
 
-app.get('/api/download', (req, res) => {
+//sending a simple json string in response to 
+//http://localhost:3000/ingredients
+app.get('/ingredients', (req, res) => {
 
-  response = readJSON('json_data.json');
+  response = readJSON(`ingredients.json`);
   res.send(response);
 });
 
-app.post('/api/upload', (req, res) => {
-  
-    console.log("recieved");
-    const b = req.body;
+//recieving a simple object and store as json file
+app.post('/ingredients', (req, res) => {
 
-    writeJSON('json_data.json', b);
-    console.log(b);
+  const b = req.body;
+  writeJSON('ingredients.json', b);
+
   //respons with the json file
   res.json(b);
 });
-
 
 //Start listening
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 })
 
+//Initialize application data
+initAppData();
+
+
+//Initialize application data
+function initAppData() {
+
+  //Here we can create some initial application data
+  const ingredients = [
+    {
+      "id": "1",
+      "item": "Bacon"
+    },
+    {
+      "id": "2",
+      "item": "Eggs"
+    },
+    {
+      "id": "3",
+      "item": "Milk"
+    },
+    {
+      "id": "4",
+      "item": "Butter"
+    }
+  ];
+
+  writeJSON(`ingredients.json`, ingredients);
+}
 
 //helper functions to read and write JSON
 function writeJSON(fname, obj) {
@@ -74,3 +104,5 @@ function readJSON(fname) {
   obj = JSON.parse(fs.readFileSync(path.join(appDataDir, fname), 'utf8'));
   return obj;
 }
+
+

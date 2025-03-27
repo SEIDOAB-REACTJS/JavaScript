@@ -1,12 +1,18 @@
 //Just to ensure we force js into strict mode in HTML scrips - we don't want any sloppy code
 'use strict';  // Try without strict mode
 
-//Start the server by opening a terminal in /case-study-server and type node simple-with-form.js
+const groupName = document.querySelector('#groupName');
+const genre = document.querySelector('#genre');
+const established = document.querySelector('#established');
+
+//Start the server by opening a terminal in /case-study-server and type node simple-json.js
 const urlGetPost = 'http://localhost:3000/api/download';      //used for get and post
 
 async function myFetch(url, method = null, body = null) {
   try {
 
+    console.log("Request initiate");
+    
     let res = await fetch(url, {
       method: method ?? 'GET',
       headers: { 'content-type': 'application/json' },
@@ -43,4 +49,8 @@ async function myFetch(url, method = null, body = null) {
 
     console.log("Data Recieved successfully");
     console.log(data);
+
+    //set the values
+    [groupName.value, genre.value, established.value] = [data.name, data.genre, data.established];
+
 })();

@@ -9,12 +9,14 @@ const groupName = document.querySelector('#groupName');
 const genre = document.querySelector('#genre');
 const established = document.querySelector('#established');
 
-//Start the server by opening a terminal in /case-study-server and type node simple-with-form.js
+//Start the server by opening a terminal in /case-study-server and type node simple-json.js
 const url = 'http://localhost:3000/api/upload';
 
 async function myFetch(url, method = null, body = null) {
   try {
 
+    console.log("Request initiate");
+    
     let res = await fetch(url, {
       method: method ?? 'GET',
       headers: { 'content-type': 'application/json' },
@@ -48,9 +50,7 @@ formValidate.addEventListener('submit', async event => {
   event.preventDefault();
 
   //this allows me to check all values individually
-  let gn = groupName.value;
-  let g = genre.value;
-  let e = groupName.value;
+  let [gn, g, e] = [groupName.value, genre.value, established.value];
 
   let data = {name: gn, genre: g, established: e};
   let result = await myFetch(url, "POST", data);
