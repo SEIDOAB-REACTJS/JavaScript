@@ -34,10 +34,6 @@ app.use(cors());
 const appDir = './app_data';
 const appJson = 'albums.json';
 
-app.get('/', (req, res) =>
-  res.send('Example server for receiving JS POST requests')
-);
-
 app.post('/api/createdir', (req, res) => {
   const form = formidable();
 
@@ -84,7 +80,7 @@ app.post('/api/createdir', (req, res) => {
     }
 
     //send success response
-    res.sendStatus(200);
+    res.status(200).send(albumStruct);
   });
 });
 
