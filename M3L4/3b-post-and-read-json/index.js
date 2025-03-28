@@ -36,15 +36,19 @@ async function myFetch(url, method = null, body = null) {
   }
 }
 
-const myForm = document.getElementById('btnGetPost');
-myForm.addEventListener('click', async (event) => {
+const ingredient = document.getElementById('ingredient');
+
+const myForm = document.getElementById('my-form');
+myForm.addEventListener('submit', async (event) => {
+
+  event.preventDefault();
 
   //read a url, get an object convert it to an object from url
   let ingredients = await myFetch(urlGetPost);
   console.log(ingredients);
 
   //add an ingredient
-  ingredients.push({ id: ingredients.length + 1, item: "another goodie" });
+  ingredients.push({ id: ingredients.length + 1, item: `${ingredient.value}` });
 
   //write the object to the url
   ingredients = await myFetch(urlGetPost, 'POST', ingredients);

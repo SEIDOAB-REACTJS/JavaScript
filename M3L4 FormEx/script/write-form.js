@@ -8,7 +8,6 @@ import musicService from'./music-group-f-service.js';
 const formValidate = document.querySelector('#formValidate');
 const groupId = document.querySelector('#groupId');
 const groupName = document.querySelector('#groupName');
-const genre = document.querySelector('#genre');
 const established = document.querySelector('#established');
 
 //Initialize the service
