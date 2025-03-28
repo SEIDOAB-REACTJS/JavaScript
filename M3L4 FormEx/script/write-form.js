@@ -30,6 +30,8 @@ formValidate.addEventListener('submit', async event => {
 
   //Complete code here to read first music group and set default data to the form
 
+  //Set groupId.value to the musicGroupId of the selected group, then you can always read it back later
+
 })();
 
 
