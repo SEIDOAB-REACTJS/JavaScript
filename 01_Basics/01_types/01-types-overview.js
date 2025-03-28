@@ -1,24 +1,27 @@
 'use strict';
-import {seedGenerator, uniqueId, randomNumber, deepCopy, isEqual} from '../SeidoHelpers/seido-helpers.js';
+import {seedGenerator, uniqueId, randomNumber, deepCopy} from '../../SeidoHelpers/seido-helpers.js';
 
 
 console.group('DECLARING variables and constants');
 // data types in js, but note you do NOT declare a datatype for variable
 // variables are declared using let
 // Using strict mode revents you from using a variable before it is declared
-let stringTest = '42';
+
 let numberTest = 42;
+let stringTest =  `Hello ${numberTest}`;
 let booleanTest = true;
 let bigIntTest = 1234n;
 
 let symbolTest = Symbol("propertyName");    // ensures a unique identifier, even if propertyname is the same
-let objectTest = {};   // empty object, object root of every type on js
+let objectTest = {name: `Martin`, age: 21 + 40};   // empty object, object root of every type on js
+
+console.log(objectTest.phone)
+console.log(objectTest.age)
 
 // undefined, null, defines not set a value, NaN is used to indicate Not A Number
 let undefinedTest = undefined;
 let nullTest = null;
 let NaNTest = NaN;
-
 
 
 // constants are declared using const, and cannot be reassigned
@@ -38,11 +41,9 @@ console.group('MIX ANY TYPE');
 // As you do NOT declare a datatype for variable, you can use any datatype in a variable at any time
 stringTest = 42;
 numberTest = objectTest;
-bigIntTest = BigInt("1"+ "0".repeat(100)); // one googol 10E100;
 
-console.log(stringTest);
-console.log(numberTest);
-console.log(bigIntTest);
+console.log(stringTest, typeof stringTest);
+console.log(numberTest,typeof numberTest);
 
 // And you can mix crazily and js tries to make type conversion convert to string (most cases) or Number
 stringTest = 42 + 42 + '42' + 42 + booleanTest;  
@@ -82,8 +83,10 @@ console.log(b == d);      // true
 console.log(b === d);     // false  - more strict
 
 console.log(e == false);   //true
-console.log(e === false);  //true
+console.log(e === false);  //false
 
+console.log (d == c);     // true
+console.log (d === c);    // false    - more strict
 
 console.log('Testing object equality');
 let name1 = {firstName: "Jane", lastName: "Doe"};
@@ -101,10 +104,13 @@ console.log (name2 === name3);   //true
 
 // for value equality you need to implement yourself the method to compare object content
 console.log('object value equality');
-console.log(JSON.stringify(name1), JSON.stringify(name2), isEqual(name1, name2)); 
+const s1 = JSON.stringify(name1);
+const s2 = JSON.stringify(name2);
+console.log(s1 === s2); 
 
+//Using a function to test  Equality
 name1.phone = '123';  //adding a property for test
-console.log(JSON.stringify(name1), JSON.stringify(name2), isEqual(name1, name2)); 
+console.log(isEqual(name1, 45)); 
 
 
 //For now, simply base value Equality on the objects string representation using JSON.stringify()
@@ -114,28 +120,6 @@ function isEqual(obj1, obj2) {
   return (JSON.stringify(obj1) === JSON.stringify(obj2));
 }
 
-let myVar = 5;
-console.log(myVar);
-myVar = 5+8;
-console.log(myVar);
-myVar = 5+8+'15';
-console.log(myVar);
-myVar = 5+8+'15'+{};
-console.log(myVar);
-
-let s = "1"+ "3".repeat(20);
-console.log(s);
-
-s = "*".repeat(10) + "hello" + "*".repeat(10)
-console.log(s)
-
-let o1 = {phone:"070-1111", address: {street: "ringvagen"}};
-let o2 = {phone:"070-1111", address: {street: "ringvagen"}};
-
-console.log(o1==o2);
-console.log(o1===o2);
-console.log(o1.phone===o2.phone);
-console.log(o1.address===o2.address);
 
 /* Exercises
 

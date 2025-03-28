@@ -1,5 +1,5 @@
 'use strict';
-import {seedGenerator, uniqueId, randomNumber, deepCopy, isEqual} from '../SeidoHelpers/seido-helpers.js';
+import {seedGenerator, uniqueId, randomNumber, deepCopy, isEqual} from '../../SeidoHelpers/seido-helpers.js';
 
 console.group('TESTING FOR Object EQUALITY');
 // non-strict equality operator: == != test for eqality after type conversions and returns a Boolean result. 

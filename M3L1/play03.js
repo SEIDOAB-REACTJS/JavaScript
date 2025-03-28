@@ -1,6 +1,6 @@
 'use strict';
 
-let o = {firstname: 'Martin', lastname: "Lenart", age: '60', address: {city: 'Stockholm'}};
+let o = {firstname: 'John', lastname: "Doe", age: '40', address: {city: 'Stockholm'}};
 
 console.log('reference copy');
 let p = o;
