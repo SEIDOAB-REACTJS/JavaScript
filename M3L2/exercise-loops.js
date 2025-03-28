@@ -29,7 +29,12 @@ for (const p of persons) {
     console.log (p +'');
 }
 
-console.log ('alternative 3');
+console.log ('alternativ 3')
+for (const index in persons) {
+    console.log (persons[index] +'');
+}
+
+console.log ('alternative 4');
 for (let index = 0; index < persons.length; index++) {
     console.log (persons[index] +'');
 }
