@@ -18,6 +18,7 @@ myForm.addEventListener('submit', async event => {
 
   //show that you can append any field. For example a API key
   formData.append('user', true);
+  console.log(formData.get("email"));
 
   for (const p of formData){
     console.log(p);
