@@ -18,5 +18,5 @@ items.forEach(i => {
 
 //traversion with for..of
 for (const i of items) {
-  console.log(i.innerHTML); 
+  console.log(i.innerText); 
 }

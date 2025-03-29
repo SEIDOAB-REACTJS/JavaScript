@@ -8,7 +8,8 @@ import {seedGenerator, uniqueId, randomNumber, deepCopy, isEqual} from '../../Se
 
 
 // select the element
-const demodiv = document.getElementById('demodiv');
+//const demodiv = document.getElementById('demodiv');
+const demodiv = document.querySelector('#demodiv');
 console.log(demodiv);
 
 // select the parent of the element

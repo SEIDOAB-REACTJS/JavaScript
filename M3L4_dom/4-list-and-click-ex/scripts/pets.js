@@ -22,15 +22,10 @@ for (let index = 0; index < 10; index++) {
     _pets.push(createPet(_seeder));    
 }
 
-const myList = document.getElementById('myPets');
-for (const item of _pets) {
-        
-    const newPet = document.createElement('li');
-    newPet.innerText = item.toString();
-    myList.appendChild(newPet)
-}
 
-const endMsg = document.getElementById('endMsg');
-endMsg.innerText = _seeder.latinParagraph.paragraph;
 
-console.log(..._pets)
+/* Exercises
+1. Add _pets as li tags under myPets so they present themselves
+2. Add a clickHandler to each li tag so the alert box shows what pet is clicked
+3. Add a latis paragraph using, _seeder.latinParagraph.paragraph; to p-tag endMsg
+*/

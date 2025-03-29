@@ -27,38 +27,26 @@ const _vehicles = [];
 for (let index = 0; index < 10; index++) {
     
     const v1 = createVehicle(_seeder);
-    if (index === 5)
-    {
-        v1.color = 'green';
-    }
     _vehicles.push(v1);
 }
 
-
-
-for (const index in _vehicles) {
-    console.log(index, _vehicles[index]);
-}
-
-const myList = document.getElementById('myList');
 for (const item of _vehicles) {
-    
-    const newVehicle = document.createElement('li');
-    newVehicle.innerText = item;
-    myList.appendChild(newVehicle);
-
     console.log(item);
 }
 
+function clickHandler (event)  {
+
+    //needed for <a> tag prevent default, stops the link from acting as a <a href=...> acting as it should
+    event.preventDefault();
+    
+    window.alert(`${event.currentTarget.innerText} was clicked!`);
+  };
 
 
-
+const myList = document.getElementById('myList');
 
 
 /* Exercises
-
-1. use the seido-helper seedGenerator and createVehicle function from M3L1 25-vehicleExercise to create an array
-   of 10 vehicles. 
-2. Loop through the array and present each Vehicle using a prototype toString
-
+1. Add _vehicles as li tags under myList so they present themselves
+2. Add a clickHandler to each li tag so the alert box shows what vehile is clicked
 */
