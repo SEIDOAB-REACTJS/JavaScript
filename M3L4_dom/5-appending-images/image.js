@@ -11,19 +11,13 @@ import {seedGenerator, uniqueId, randomNumber, deepCopy, isEqual} from '../../Se
 
 // Access all elements of a specific type
 // loop over all images
-const imgElements = document.getElementsByTagName('img');
-for (let i = 0; i < imgElements.length; i += 1) {
-  const img = imgElements[i];
-  console.log(img);
-}
 
-// append a new image
+let imgs = document.querySelectorAll('img'); 
+imgs.forEach(img => {
+  console.log(img);
+});
 
 //create the image
-//querySelectorAll more modern and general than getElementsByTagName
-let imgs = document.querySelectorAll('img'); 
-console.log(imgs.length);
-
 //embedd the new image in a p element - just to look like the other
 const p = document.createElement('p');
 const img = document.createElement('img');
