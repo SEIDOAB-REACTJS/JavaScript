@@ -6,6 +6,7 @@ const pageSize = 5;
 const maxPageNr =  Math.ceil(_seeder.allQuotes.length/pageSize);
 let currentPageNr = 0;
 
+let quoteList =  _seeder.allQuotes;
 
 //Elements in DOM
 const _list = document.querySelector('#list-of-items');
@@ -26,17 +27,20 @@ btnPrev.addEventListener("click", clickHandlerPrev);
 btnNext.addEventListener("click", clickHandlerNext);
 
 function clickHandlerAllQ (e) {
-    let _quotes = _seeder.allQuotes.slice(currentPageNr * pageSize, currentPageNr * pageSize + pageSize);
-    fillList(_quotes);
+
+    currentPageNr = 0;
+    quoteList =  _seeder.allQuotes;
+    fillList();
 }
 
 function clickHandlerLoveQ (e) {
 
+    currentPageNr = 0;
     //filter out all love quotes from _seeder.allQuote
-    let _quotes = _seeder.allQuotes
-            .filter ((item) => item.quote.toLowerCase().includes('love'))
-            .slice(currentPageNr * pageSize, currentPageNr * pageSize + pageSize);
-    fillList(_quotes);
+    quoteList = _seeder.allQuotes
+            .filter ((item) => item.quote.toLowerCase().includes('love'));
+
+    fillList();
 }
 
 function clickHandlerClear (e) {
@@ -50,7 +54,7 @@ function clickHandlerNext (e)
     if (currentPageNr < maxPageNr-1) {
         currentPageNr++;
     }
-    clickHandlerAllQ();
+    fillList()
 }
 
 function clickHandlerPrev (e)
@@ -58,17 +62,20 @@ function clickHandlerPrev (e)
     if (currentPageNr > 0) {
         currentPageNr--;
     }
-    clickHandlerAllQ();
+    fillList()
 }
 
 //Helpers
-function fillList(quotes)
+function fillList()
 {
     //Clear first
     clearList();
 
+    //slice out the quote page
+    let quotePage = quoteList.slice(currentPageNr * pageSize, currentPageNr * pageSize + pageSize);
+
     //creat a row for every quote and append it to _list
-    for (const q of quotes) {
+    for (const q of quotePage) {
 
         const div = createRow();
         div.innerText = q.quote;
