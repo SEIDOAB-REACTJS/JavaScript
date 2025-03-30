@@ -1,0 +1,67 @@
+<!doctype html>
+  <html lang="en" data-bs-theme="auto">
+
+    <head>
+        <!--From index.cshtml-->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="Martin Lenart, Seido AB">
+    
+        <!-- Modified from index.cshtml-->
+        <title>Modal bootstrap</title>
+
+        <!-- Bootstrap styles from their respective templates -->
+        <link href="./css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="./css/bootstrap/navbars-offcanvas.css" rel="stylesheet">
+        <link href="./css/bootstrap/features.css" rel="stylesheet">
+        <link href="./css/bootstrap/grid.css" rel="stylesheet">
+        <link href="./css/bootstrap/sign-in.css" rel="stylesheet">
+        <link href="./css/bootstrap/modals.css" rel="stylesheet">
+    </head>
+
+    <body> 
+
+        <div class="container px-4 py-4" id="modals">
+            <h2 class="pb-2 border-bottom">Modals</h2>
+            
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#softModal" data-bs-whatever="@mdo">Open modal for @mdo</button>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#softModal" data-bs-whatever="@fat">Open modal for @fat</button>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#softModal" data-bs-whatever="@getbootstrap">Open modal for @getbootstrap</button>
+            
+            <div class="modal fade" id="softModal" tabindex="-1" aria-labelledby="softModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="softModalLabel">New message</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">Recipient:</label>
+                        <input type="text" class="form-control" id="recipient-name">
+                      </div>
+                      <div class="mb-3">
+                        <label for="message-text" class="col-form-label">Message:</label>
+                        <textarea class="form-control" id="message-text"></textarea>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button id="modalOk" type="button" class="btn btn-primary">Send message</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <!-- Bootstrap Javascript -->
+        <script src="./script/bootstrap/bootstrap.bundle.js"></script>
+
+        <script src="./script/index.js"></script>
+
+    </body>
+
+</html>
