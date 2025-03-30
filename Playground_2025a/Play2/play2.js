@@ -1,5 +1,5 @@
 'use strict';
-import {seedGenerator, uniqueId, randomNumber, deepCopy} from '../SeidoHelpers/seido-helpers.js';
+import {seedGenerator, uniqueId, randomNumber, deepCopy} from '../../SeidoHelpers/seido-helpers.js';
 
 let a = 5;
 console.log (a + 8);

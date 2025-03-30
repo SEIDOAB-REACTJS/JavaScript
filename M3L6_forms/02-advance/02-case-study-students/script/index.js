@@ -1,5 +1,6 @@
 //Just to ensure we force js into strict mode in HTML scrips - we don't want any sloppy code
 'use strict';  // Try without strict mode
+//Start the server by opening a terminal in /01-case-study-server and type node simple-with-students.js
 
 //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import
 //https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes
