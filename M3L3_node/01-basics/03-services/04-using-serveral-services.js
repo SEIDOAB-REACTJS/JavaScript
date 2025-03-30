@@ -1,6 +1,6 @@
 'use strict';
 import {seedGenerator, uniqueId, randomNumber, deepCopy} from '../../../SeidoHelpers/seido-helpers.js';
-import {Book, LibraryService} from './26-constructor-function-service.js';
+import {Book, LibraryService} from './02-constructor-function-service.js';
 
 //Using Book with seedGenerator
 const b = new Book("Huckleberry Finn", "Mark Tawin", "Adventure", 100, 1875);

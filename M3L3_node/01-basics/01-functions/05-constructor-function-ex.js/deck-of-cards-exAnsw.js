@@ -2,7 +2,7 @@
 'use strict';  // Try without strict mode
 
 //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import
-import { prototypeCard } from '../../../02_Advanced/01_classes/29-class-deck-of-cards/playing-card.js';
+import { prototypeCard } from './playing-card.js';
 
 function deckOfCards() {
 

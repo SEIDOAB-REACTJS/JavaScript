@@ -3,7 +3,7 @@
 import {seedGenerator, uniqueId, randomNumber, deepCopy, isEqual} from '../../../../SeidoHelpers/seido-helpers.js';
 
 //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import
-import { prototypeCard } from '../../../M3L2/29-class-deck-of-cards/playing-card.js';
+import { prototypeCard } from './playing-card.js';
 
 function deckOfCards() {
 

@@ -1,5 +1,5 @@
 'use strict';
-import {Book, LibraryService} from './26-constructor-function-service.js';
+import {Book, LibraryService} from './02-constructor-function-service.js';
 
 
 //using the service

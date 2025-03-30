@@ -1,6 +1,6 @@
 'use strict';
 import {seedGenerator, uniqueId, randomNumber, deepCopy, isEqual} from '../../../SeidoHelpers/seido-helpers.js';
-import {Account} from '../01_functions/25a-function-prototypes.js';
+import {Account} from '../01-functions/02-function-prototypes.js';
 
 console.group('ny skapar vi banken');
 class Bank {
