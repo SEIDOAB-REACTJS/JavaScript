@@ -48,8 +48,8 @@ async function myFetch(url, method = null, body = null) {
   //Here I write all the code to be executed at script top level, c# main level
 
   //Use GET to read first page of music groups
-  //let reqUrl = `${url}/Read?flat=false&pageNr=0&pageSize=10`;  
-  let reqUrl = `${url}/MusicGroup/Read?flat=false&pageNr=0&pageSize=10&filter=Floyd`;
+  let reqUrl = `${url}/MusicGroup/Read?flat=false&pageNr=0&pageSize=10`;  
+  //let reqUrl = `${url}/MusicGroup/Read?flat=false&pageNr=0&pageSize=10&filter=Dylan`;
   let data = await myFetch(reqUrl);
   if (data) {
     console.log(`The database contains\n ${data.dbItemsCount} items`);
